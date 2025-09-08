@@ -14,6 +14,14 @@ const HomeBanner = () => {
       src: "/banner2.jpg",
       alt: "Banner 2"
     }
+    ,{
+      src: "/banner3.jpg",
+      alt: "Banner 3"
+    },
+    {
+      src: "/banner4.jpg",
+      alt: "Banner 4"
+    }
   ];
   const mobileBanners = [
     {

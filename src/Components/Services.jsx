@@ -408,7 +408,7 @@ const Services = () => {
               className="text-xs sm:text-sm md:text-base mb-3 sm:mb-4 md:mb-6 opacity-90"
               variants={itemVariants}
             >
-              Get expert guidance for your business registration and compliance needs
+            Get Expert Services for Your Domestic Needs and Maid Selection
             </motion.p>
             <motion.button 
               className="bg-white text-red-600 px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-md font-semibold text-xs sm:text-sm md:text-base hover:bg-gray-100 transition-colors duration-200"

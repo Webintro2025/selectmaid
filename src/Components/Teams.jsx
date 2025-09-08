@@ -39,49 +39,49 @@ const Teams = () => {
   {
     "service": "Maid Services Live-in 24H",
     "description": "We provide all types of Maids, Helpers, and Cleaners for homes, kothis, offices, etc.",
-    "image": "update-image.jpg"
+    "image": "/House Maid Live-in Services.png"
   },
   {
     "service": "New Born Baby Maid / Japa",
     "description": "Available 24h live-in new born baby maid in Delhi NCR. Salary ₹30,000. Well experienced (10+ years).",
-    "image": "update-image.jpg"
+    "image": "/New born baby maid or japa maid.png"
   },
   {
     "service": "Patient Care Attendant Services Live-in",
     "description": "We provide all types of home care services like patient care, attendant, elder care, and home nurse. Live-in available.",
-    "image": "update-image.jpg"
+    "image": "/Patient Care Attendant Services Live-in.png"
   },
   {
     "service": "Cook Services Live-in",
     "description": "Home cook services, live-in available.",
-    "image": "update-image.jpg"
+    "image": "/Paasport Holder Maid Cook Nanny for Overseas.png"
   },
   {
     "service": "Baby Or Nanny Live-in 24h",
-    "description": "We provide trained professionals for baby care, nanny, and child caretaker roles. Live-in available in Delhi NCR and overseas.",
-    "image": "update-image.jpg"
+    "description": "Professional nannies and baby care staff available for 24h live-in service.",
+    "image": "/Baby care Services Live-in.png"
   },
   {
     "service": "How We Can Get Best Maid Services",
     "description": "Contact to get best maid services.",
-    "image": "update-image.jpg"
+    "image": "/House Maid Live-in Services.png"
   },
   {
     "service": "House Maid Services Delhi",
     "description": "Contact us for house maid services in Delhi.",
-    "image": "update-image.jpg"
+    "image": "/24 Hours live-in House Maid, Cook, Nanny in Delhi.png"
   },
   {
     "service": "Hire Maid Cook Services in Delhi Noida",
     "description": "We have Bengali, Jharkhand, and Odisha maids available for live-in service.",
-    "image": "update-image.jpg"
+    "image": "/Male Helper or Cleaner or House Keeping Staff for hom.png"
   }
 ]
 
   ;
 
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-sky-50 py-8 sm:py-12 md:py-20">
+    <div className="bg-gradient-to-br from-red-100 via-red-200 to-white py-8 sm:py-12 md:py-20">
       <motion.div 
         className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6"
         initial="hidden"
@@ -95,17 +95,17 @@ const Teams = () => {
           variants={cardVariants}
         >
           <motion.h2 
-            className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight mb-3 sm:mb-4 md:mb-6 bg-gradient-to-r from-sky-400 to-gray-600 bg-clip-text text-transparent"
+            className="text-xl sm:text-2xl md:text-3xl font-extrabold leading-tight mb-3 sm:mb-4 md:mb-6 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
             Our Partners & Their Expertise
           </motion.h2>
           <motion.p 
-            className="text-xs sm:text-sm md:text-base leading-relaxed max-w-3xl mx-auto text-gray-600"
+            className="text-[11px] sm:text-xs md:text-sm leading-relaxed max-w-3xl mx-auto text-red-700"
             variants={cardVariants}
           >
-            Meet our experienced team of Chartered Accountants who bring decades of combined expertise to serve your business needs
+            We collaborate with top domestic staffing agencies to bring you the best maids, nannies, cooks, and attendants.
           </motion.p>
         </motion.div>
 
@@ -122,7 +122,7 @@ const Teams = () => {
               custom={index}
             >
               <motion.div
-                className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border border-gray-200 h-full relative overflow-x-hidden"
+                className="bg-white rounded-2xl p-0 shadow-lg border border-red-200 h-full relative"
                 whileHover={{ 
                   scale: 1.03,
                   boxShadow: "0 25px 50px rgba(0,0,0,0.15)",
@@ -132,26 +132,30 @@ const Teams = () => {
               >
                 {/* Background Gradient Overlay */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-sky-400/10 to-gray-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  className="absolute inset-0 bg-gradient-to-br from-red-200/30 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
                 />
 
                 {/* Content */}
                 <div className="relative z-10">
-                  <motion.img 
+                  <motion.img
                     src={partner.image}
                     alt={partner.service}
-                    className="w-16 h-16 object-cover rounded-full mb-4 mx-auto"
+                    className="w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 object-cover rounded-xl mx-auto mb-2 group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    initial={{ scale: 1 }}
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.4 }}
                   />
-                  <motion.h3 
-                    className="text-base sm:text-lg md:text-2xl font-bold text-gray-800 mb-1 sm:mb-2 text-center"
+                  <motion.h3
+                    className="text-xs sm:text-sm md:text-base font-bold text-red-800 mb-1 text-center"
                     whileHover={{ scale: 1.02 }}
                   >
                     {partner.service}
                   </motion.h3>
-                  <motion.p 
-                    className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 md:mb-6 text-center"
+                  <motion.p
+                    className="text-[10px] sm:text-xs md:text-sm text-red-700 text-center mb-2"
                     whileHover={{ x: 2 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -169,7 +173,7 @@ const Teams = () => {
           variants={cardVariants}
         >
           <motion.div 
-            className="bg-gradient-to-r from-sky-400 to-gray-600 rounded-2xl p-4 sm:p-6 md:p-8 text-white relative overflow-x-hidden"
+            className="bg-gradient-to-r from-red-200 to-red-400 rounded-2xl p-4 sm:p-6 md:p-8 text-white relative overflow-x-hidden"
             whileHover={{ 
               scale: 1.02,
               boxShadow: "0 25px 50px rgba(14, 165, 233, 0.3)"
@@ -185,16 +189,16 @@ const Teams = () => {
                 className="text-base sm:text-lg md:text-2xl font-bold mb-2 sm:mb-3 md:mb-4"
                 variants={cardVariants}
               >
-                Ready to Work with Our Expert Team?
+                Ready to Work with Our Maid?
               </motion.h3>
               <motion.p 
                 className="text-xs sm:text-sm md:text-base mb-3 sm:mb-4 md:mb-6 opacity-90"
                 variants={cardVariants}
               >
-                Get personalized advice from our experienced Chartered Accountants
+                We collaborate with top domestic staffing agencies to bring you the best maids, nannies, cooks, and attendants.
               </motion.p>
               <motion.button 
-                className="bg-white text-sky-600 px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-lg font-semibold text-xs sm:text-sm md:text-base hover:bg-gray-100 transition-colors duration-200 shadow-lg"
+                className="mt-2 w-full bg-gradient-to-r from-red-200 to-red-400 text-white py-1.5 px-2 rounded-lg font-semibold text-xs sm:text-sm md:text-base hover:from-red-300 hover:to-red-500 transition-all duration-300 border border-red-200"
                 whileHover={{ 
                   scale: 1.05,
                   boxShadow: "0 15px 30px rgba(255,255,255,0.3)"

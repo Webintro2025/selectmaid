@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Select Maid | Best CA Services in Delhi",
+  title: "Select Maid ",
   description: "Get expert Chartered Accountant services in Delhi: Company Registration, GST Registration & Return Filing, Bookkeeping, MSME, Startup India, Society & Trust Registration. Fast, reliable, and affordable legal & tax solutions for your business.",
   keywords: [
     "CA in Delhi",

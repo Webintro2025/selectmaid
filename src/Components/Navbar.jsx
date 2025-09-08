@@ -202,7 +202,7 @@ const Navbar = () => {
                 transition: { duration: 0.3 }
               }}
             >
-              <Link href="/about">
+              <Link href="/">
                 <motion.span
                   className="relative"
                   whileHover={{ y: -2 }}
@@ -357,7 +357,7 @@ const Navbar = () => {
                 transition: { duration: 0.3 }
               }}
             >
-              <Link href="/contact">
+              <Link href="/">
                 <motion.span
                   className="relative"
                   whileHover={{ y: -2 }}
