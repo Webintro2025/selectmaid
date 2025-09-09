@@ -66,7 +66,7 @@ const HomeBanner = () => {
 
   // Only show the first banner, no text, no navigation
   return (
-  <div className="relative w-full h-[45vh] sm:h-[35vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
+  <div className="relative w-full h-[40vh] sm:h-[35vh] md:h-[60vh] lg:h-[70vh] overflow-hidden sm:mt-0">
       <AnimatePresence mode="wait">
         <motion.img
           key={banners[currentIndex]?.src}
