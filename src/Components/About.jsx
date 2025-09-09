@@ -131,7 +131,7 @@ const About = () => {
             <motion.img
               src="/About.png"
               alt="About Select Maid - Domestic Services"
-              className="w-full h-auto max-w-[320px] sm:max-w-[400px] md:max-w-[320px] lg:max-w-[400px] xl:max-w-[500px] aspect-square rounded-3xl mt-36 shadow-xl mx-auto"
+              className="w-full h-auto max-w-[320px] sm:max-w-[400px] md:max-w-[320px] lg:max-w-[400px] xl:max-w-[500px] aspect-square rounded-3xl mt-8 sm:mt-20 md:mt-36 shadow-xl mx-auto"
               initial={{ scale: 1.1, x: -100, opacity: 0 }}
               whileInView={{ scale: 1, x: 0, opacity: 1 }}
               viewport={{ once: true }}

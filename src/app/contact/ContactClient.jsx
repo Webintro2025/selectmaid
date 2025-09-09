@@ -62,10 +62,10 @@ const ContactClient = () => {
         variants={headerVariants}
       >
         {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-slate-800 to-blue-900">
+  <div className="absolute inset-0 bg-gradient-to-br from-red-900 via-slate-800 to-red-900">
           {/* Animated Circles */}
           <motion.div
-            className="absolute top-10 left-10 w-32 h-32 bg-blue-400 rounded-full opacity-20"
+            className="absolute top-10 left-10 w-32 h-32 bg-red-400 rounded-full opacity-20"
             animate={{
               scale: [1, 1.2, 1],
               rotate: [0, 180, 360],
@@ -90,7 +90,7 @@ const ContactClient = () => {
             }}
           />
           <motion.div
-            className="absolute bottom-20 left-1/4 w-40 h-40 bg-blue-300 rounded-full opacity-10"
+            className="absolute bottom-20 left-1/4 w-40 h-40 bg-red-300 rounded-full opacity-10"
             animate={{
               scale: [1, 1.3, 1],
               x: [0, 30, 0],
@@ -118,7 +118,7 @@ const ContactClient = () => {
             }}
           />
           <motion.div
-            className="absolute bottom-1/3 right-1/3 w-8 h-8 bg-blue-200 opacity-25 rotate-45"
+            className="absolute bottom-1/3 right-1/3 w-8 h-8 bg-red-200 opacity-25 rotate-45"
             animate={{
               y: [0, 15, 0],
               rotate: [45, 225, 405],
@@ -154,34 +154,22 @@ const ContactClient = () => {
             transition={{ duration: 0.3 }}
           >
             <motion.h1 
-              className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4 md:mb-6 leading-tight"
-              animate={{
-                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              style={{
-                background: 'linear-gradient(45deg, #ffffff, #60a5fa, #e2e8f0, #ffffff)',
-                backgroundSize: '300% 300%',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
+              className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-red-700 mb-4 md:mb-6 leading-tight"
+              initial="hidden"
+              animate="visible"
+              variants={headerVariants}
             >
               Contact Us
             </motion.h1>
+            <div className="text-lg font-semibold text-red-500 mb-2">Get in Touch for Trusted Maid & Home Help Services</div>
           </motion.div>
 
           <motion.p 
-            className="text-sm sm:text-base md:text-lg text-blue-100 mb-6 md:mb-8 leading-relaxed"
+            className="text-sm sm:text-base md:text-lg text-red-100 mb-6 md:mb-8 leading-relaxed"
             variants={fadeInVariants}
           >
-            Ready to transform your business with expert financial guidance? 
-            <br className="hidden md:block" />
-            Let's start your journey to financial excellence today.
+            Reach out to Select Maid for reliable, professional maid and domestic help services.<br className="hidden md:block" />
+            Your comfort and peace of mind are our priority – let’s make your home life easier together.
           </motion.p>
 
           <motion.div 
@@ -189,7 +177,7 @@ const ContactClient = () => {
             variants={fadeInVariants}
           >
             <motion.button
-              className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-5 py-2 sm:px-7 sm:py-3 rounded-full font-semibold text-base sm:text-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 flex items-center gap-2 md:gap-3 shadow-lg"
+              className="bg-gradient-to-r from-red-500 to-red-600 text-white px-5 py-2 sm:px-7 sm:py-3 rounded-full font-semibold text-base sm:text-lg hover:from-red-600 hover:to-red-700 transition-all duration-300 flex items-center gap-2 md:gap-3 shadow-lg"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4)",
@@ -217,7 +205,7 @@ const ContactClient = () => {
             </motion.button>
 
             <motion.button
-              className="border-2 border-white text-white px-5 py-2 sm:px-7 sm:py-3 rounded-full font-semibold text-base sm:text-lg hover:bg-white hover:text-blue-900 transition-all duration-300 flex items-center gap-2 md:gap-3"
+              className="border-2 border-white text-white px-5 py-2 sm:px-7 sm:py-3 rounded-full font-semibold text-base sm:text-lg hover:bg-white hover:text-red-900 transition-all duration-300 flex items-center gap-2 md:gap-3"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 20px 40px rgba(255, 255, 255, 0.2)",

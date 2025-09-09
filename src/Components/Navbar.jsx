@@ -28,18 +28,17 @@ const Navbar = () => {
     }
   });
 
-  // Updated services list
+  // Updated services list from servicesData.js
   const services = [
     'House Maid Live-in Services',
     'Home Nurse Services',
-    'House Maid Live-in Services',
-    'Baby care Services Live-in',
+    'Baby Care Services Live-in',
     'Patient Care Attendant Services Live-in',
-    'Male Helper or Cleaner or House Keeping Staff for home',
-    'New born baby maid or japa maid',
-    'English Speaking Overseas Maid',
-    'Paasport Holder Maid Cook Nanny for Overseas',
-    '24 Hours live-in House Maid, Cook, Nanny in Delhi'
+    'Male Helper or Housekeeping Staff',
+    'Newborn Baby Maid or Japa Maid',
+    'English-Speaking Overseas Maid',
+    'Passport Holder Maid, Cook, Nanny Overseas',
+    '24 Hours Live-in House Maid, Cook, Nanny'
   ];
 
   // Animation variants
@@ -202,7 +201,7 @@ const Navbar = () => {
                 transition: { duration: 0.3 }
               }}
             >
-              <Link href="/">
+              <Link href="/about">
                 <motion.span
                   className="relative"
                   whileHover={{ y: -2 }}
@@ -357,7 +356,7 @@ const Navbar = () => {
                 transition: { duration: 0.3 }
               }}
             >
-              <Link href="/">
+              <Link href="/contact">
                 <motion.span
                   className="relative"
                   whileHover={{ y: -2 }}

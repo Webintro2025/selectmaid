@@ -122,25 +122,7 @@ const TopHeader = () => {
         </motion.div>
       </div>
 
-      {/* Mobile Responsive Separator */}
-      <motion.div 
-        className="block md:hidden mt-1.5 sm:mt-2 pt-1.5 sm:pt-2 border-t border-gray-600"
-        variants={itemVariants}
-      >
-        <div className="flex flex-row justify-between items-center text-[9px] xs:text-[10px] sm:text-xs">
-          <div className="flex items-center space-x-0.5 xs:space-x-1">
-            <span className="text-green-400">🚀</span>
-            <span className="text-red-300 font-semibold">Startup - 2025 as EazyTax</span>
-          </div>
-          <div className="flex items-center space-x-0.5 xs:space-x-1">
-            <span className="text-orange-300">⭐</span>
-            <span className="text-red-300 font-semibold">Providing services since 1990</span>
-          </div>
-        </div>
-        <div className="text-gray-300 text-[8px] xs:text-[10px] sm:text-xs mt-0.5 sm:mt-1 text-center">
-          Tech enabled tax consultancy revolution
-        </div>
-      </motion.div>
+  
     </motion.div>
   )
 }

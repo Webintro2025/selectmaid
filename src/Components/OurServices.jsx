@@ -89,11 +89,7 @@ const OurServices = () => {
       image: "/Paasport Holder Maid Cook Nanny for Overseas.png",
       description: "Our passport holder maids, cooks, and nannies are available for overseas assignments, offering skilled domestic help for families abroad. With verified documents and experience, staff provides cooking, cleaning, childcare, and elder care."
     },
-    {
-      title: "24 Hours live-in House Maid, Cook, Nanny in Delhi",
-      image: "/24 Hours live-in House Maid, Cook, Nanny in Delhi.png",
-      description: "Our 24-hour live-in maid, cook, and nanny services in Delhi offer round-the-clock assistance for busy families. Staff is trained in household management, meal preparation, childcare, and elderly care, providing reliable support and flexibility."
-    }
+
   ];
 
   return (
@@ -142,7 +138,7 @@ const OurServices = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-white border border-red-200 rounded-xl p-3 sm:p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+              className="bg-white border border-red-200 rounded-xl p-3 sm:p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full overflow-hidden"
               variants={topToBottomVariants}
               whileHover={{ 
                 scale: 1.03,
@@ -155,7 +151,7 @@ const OurServices = () => {
             >
               {/* Service Image */}
                <motion.div 
-                className="flex items-center justify-center w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 bg-transparent mb-2 sm:mb-3 md:mb-4 mx-auto p-0 border-0"
+                className="flex items-center justify-center w-full max-w-full h-[180px] sm:w-56 sm:h-56 md:w-64 md:h-64 bg-transparent mb-2 sm:mb-3 md:mb-4 mx-auto p-0 border-0 overflow-hidden"
                 whileHover={{ 
                   scale: 1.1,
                   transition: { duration: 0.6 }
@@ -164,7 +160,7 @@ const OurServices = () => {
                 <motion.img
                   src={service.image}
                   alt={service.title}
-                  className="object-contain w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 m-0 p-0 border-0"
+                  className="object-contain w-full max-w-full h-full max-h-[180px] sm:w-56 sm:h-56 md:w-64 md:h-64 m-0 p-0 border-0"
                   initial={{ scale: 1 }}
                   whileHover={{ scale: 1.15 }}
                   transition={{ duration: 0.4 }}

@@ -18,16 +18,23 @@ const HomeBanner = () => {
       src: "/banner3.jpg",
       alt: "Banner 3"
     },
-    {
-      src: "/banner4.jpg",
-      alt: "Banner 4"
-    }
+    
   ];
   const mobileBanners = [
     {
-      id: 1,
-      src: "/bannerM3.jpg",
+      id :1,
+      src: "/banner1M.jpg",
       alt: "Mobile Banner 1"
+    },
+    {
+      id: 2,
+      src: "/banner2M.jpg",
+      alt: "Mobile Banner 2"
+    },
+    {
+      id: 3,
+      src: "/banner3M.jpg",
+      alt: "Mobile Banner 3"
     }
   ];
 
@@ -59,7 +66,7 @@ const HomeBanner = () => {
 
   // Only show the first banner, no text, no navigation
   return (
-    <div className="relative w-full h-[28vh] sm:h-[35vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
+  <div className="relative w-full h-[45vh] sm:h-[35vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.img
           key={banners[currentIndex]?.src}

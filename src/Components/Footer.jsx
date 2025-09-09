@@ -171,7 +171,9 @@ const Footer = () => {
                       variants={listItemVariants}
                       whileHover={{ color: "#EF4444", x: 8, transition: { duration: 0.3 } }}
                     >
-                      {service}
+                      <Link href={`/services?name=${encodeURIComponent(service)}`}>
+                        <span>{service}</span>
+                      </Link>
                     </motion.li>
                   ))}
                 </motion.ul>
@@ -199,19 +201,9 @@ const Footer = () => {
                 className="text-black text-xs lg:text-sm space-y-1 lg:space-y-1.5"
                 variants={containerVariants}
                 initial="hidden"
-                whileInView="visible"
+                animate="visible"
                 viewport={{ once: true }}
               >
-                <motion.li variants={listItemVariants}>
-                  <Link href="/">
-                    <motion.span
-                      className="cursor-pointer inline-block"
-                      whileHover={{ color: "#60A5FA", x: 8, transition: { duration: 0.3 } }}
-                    >
-                      Home
-                    </motion.span>
-                  </Link>
-                </motion.li>
                 <motion.li variants={listItemVariants}>
                   <Link href="/about">
                     <motion.span
