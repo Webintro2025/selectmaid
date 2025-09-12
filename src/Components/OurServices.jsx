@@ -2,6 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Link from "next/link";
+import slugify from "slugify";
 
 const OurServices = () => {
   // Animation variants
@@ -138,7 +139,7 @@ const OurServices = () => {
           variants={containerVariants}
         >
           {services.map((service, index) => (
-            <Link href={`/services?name=${encodeURIComponent(service.title)}`} passHref>
+            <Link href={`/${slugify(service.title, { lower: true, strict: true })}`} passHref>
               <motion.div
                 key={index}
                 className="bg-white border border-red-200 rounded-xl p-6 sm:p-8 md:p-10 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full overflow-hidden"

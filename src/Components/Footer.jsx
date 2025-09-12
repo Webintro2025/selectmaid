@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import slugify from 'slugify';
 
 const maidServices = [
   "House Maid Live-in Services",
@@ -171,7 +172,7 @@ const Footer = () => {
                       variants={listItemVariants}
                       whileHover={{ color: "#EF4444", x: 8, transition: { duration: 0.3 } }}
                     >
-                      <Link href={`/services?name=${encodeURIComponent(service)}`}>
+                      <Link href={`/services/${slugify(service, { lower: true })}`}>
                         <span>{service}</span>
                       </Link>
                     </motion.li>

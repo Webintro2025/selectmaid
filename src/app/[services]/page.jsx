@@ -1,27 +1,26 @@
 "use client";
-import { useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import servicesData from "@/servicesData";
 import GetInTouch from "@/Components/GetInTouch";
+import slugify from "slugify";
 
 export default function ServicePage() {
-  const searchParams = useSearchParams();
-  const name = searchParams.get("name");
+  const pathname = usePathname();
+  const slug = pathname.split("/").pop();
   const [service, setService] = useState(null);
 
   useEffect(() => {
-    if (name) {
+    if (slug) {
       const found = servicesData.find(
-        (s) =>
-          s.title?.toLowerCase().includes(name.toLowerCase()) ||
-          s.title?.toLowerCase() === name.toLowerCase()
+        (s) => slugify(s.title, { lower: true }) === slug
       );
       setService(found || null);
     }
-  }, [name]);
+  }, [slug]);
 
-  if (!name)
+  if (!slug)
     return (
       <div className="p-8 text-center text-xl text-gray-500">
         Please select a service from the menu.

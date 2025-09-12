@@ -3,6 +3,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link';
 import servicesData from '@/servicesData';
+import slugify from "slugify";
 
 const Teams = () => {
   // Animation variants
@@ -95,7 +96,7 @@ const Teams = () => {
 
                 {/* Content */}
                 <div className="relative z-10">
-                   <Link href={`/services?name=${encodeURIComponent(service.title)}`} onClick={() => { setIsMenuOpen(false); setIsServicesOpen(false); }}>
+                   <Link href={`/${slugify(service.title, { lower: true, strict: true })}`} onClick={() => { setIsMenuOpen(false); setIsServicesOpen(false); }}>
                    
                   <motion.img
                     src={`/${service.image}`}
@@ -111,7 +112,7 @@ const Teams = () => {
                     className="text-sm sm:text-base md:text-lg font-bold text-red-800 mb-1 text-center"
                     whileHover={{ scale: 1.02 }}
                   >
-                    <Link href={`/services?name=${encodeURIComponent(service.title)}`} onClick={() => { setIsMenuOpen(false); setIsServicesOpen(false); }}>
+                    <Link href={`/${slugify(service.title, { lower: true, strict: true })}`} onClick={() => { setIsMenuOpen(false); setIsServicesOpen(false); }}>
                       {service.title}
                     </Link>
                   </motion.h3>

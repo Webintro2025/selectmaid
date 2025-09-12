@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link';
+import slugify from "slugify";
 
 const Services = () => {
   const scrollContainerRef = useRef(null);
@@ -315,7 +316,7 @@ const Services = () => {
                 </motion.div>
               </motion.div>
               {services.map((service, index) => (
-                <Link key={service.title} href={`/services?name=${encodeURIComponent(service.title)}`} passHref>
+                <Link key={service.title} href={`/${slugify(service.title, { lower: true, strict: true })}`} passHref>
                   <motion.div
                     className="bg-white border border-gray-200 rounded-lg p-3 sm:p-4 shadow-sm"
                     variants={serviceCardVariants}

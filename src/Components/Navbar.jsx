@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion'
 import Link from 'next/link'
+import slugify from 'slugify';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -297,7 +298,7 @@ const Navbar = () => {
                             }}
                             className="px-3 py-2.5 text-sm text-gray-700 cursor-pointer transition-all duration-200 rounded-md mx-1"
                           >
-                            <Link href={`/services?name=${encodeURIComponent(service)}`} className="flex items-center space-x-3 w-full h-full">
+                            <Link href={`/${slugify(service, { lower: true })}`} className="flex items-center space-x-3 w-full h-full">
                               <motion.span
                                 className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"
                                 whileHover={{ 
@@ -483,7 +484,7 @@ const Navbar = () => {
                           className="px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-700 cursor-pointer"
                           whileHover={{ x: 8, color: "#2563EB" }}
                         >
-                          <Link href={`/services?name=${encodeURIComponent(service)}`} onClick={() => { setIsMenuOpen(false); setIsServicesOpen(false); }}>
+                          <Link href={`/${slugify(service, { lower: true })}`} onClick={() => { setIsMenuOpen(false); setIsServicesOpen(false); }}>
                             {service}
                           </Link>
                         </motion.li>
@@ -683,7 +684,7 @@ const Navbar = () => {
                             }}
                             className="px-3 py-2.5 text-sm text-gray-700 cursor-pointer transition-all duration-200 rounded-md mx-1"
                           >
-                            <Link href={`/services?name=${encodeURIComponent(service)}`} legacyBehavior>
+                            <Link href={`/${slugify(service, { lower: true })}`} legacyBehavior>
                               <a className="flex items-center space-x-3 w-full h-full">
                                 <motion.span
                                   className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"
