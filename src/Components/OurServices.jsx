@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { motion } from 'framer-motion'
+import Link from "next/link";
 
 const OurServices = () => {
   // Animation variants
@@ -70,25 +71,26 @@ const OurServices = () => {
       description: "Our patient care attendant live-in services provide dedicated support for individuals with health challenges, disabilities, or post-hospital recovery. Attendants assist with daily activities, hygiene, mobility, and medication reminders, focusing on empathy and comfort."
     },
     {
-      title: "Male Helper or Cleaner or House Keeping Staff for home",
+      title: "Male Helper or Housekeeping Staff",
       image: "/Male Helper or Cleaner or House Keeping Staff for hom.png",
       description: "Our male helpers and housekeeping staff provide professional cleaning, maintenance, and support for homes and apartments. Services include deep cleaning, furniture moving, gardening, and general upkeep. Reliable, background-checked, and efficient staff."
     },
     {
-      title: "New born baby maid or japa maid",
+      title: "Newborn Baby Maid or Japa Maid",
       image: "/New born baby maid or japa maid.png",
       description: "Our japa maids specialize in postnatal care for mothers and newborns, offering traditional massage, bathing, and nutrition support. Experienced maids help new mothers recover and adapt, ensuring proper care for both mother and baby."
     },
     {
-      title: "English Speaking Overseas Maid",
+      title: "English-Speaking Overseas Maid",
       image: "/English Speaking Overseas Maid.png",
       description: "We offer English-speaking maids for overseas families and expatriates, ensuring clear communication and high standards of service. Staff is trained in international etiquette, cooking, cleaning, and childcare for travel or long-term residence."
     },
     {
-      title: "Paasport Holder Maid Cook Nanny for Overseas",
+      title: "Passport Holder Maid, Cook, Nanny Overseas",
       image: "/Paasport Holder Maid Cook Nanny for Overseas.png",
       description: "Our passport holder maids, cooks, and nannies are available for overseas assignments, offering skilled domestic help for families abroad. With verified documents and experience, staff provides cooking, cleaning, childcare, and elder care."
     },
+   
 
   ];
 
@@ -97,7 +99,7 @@ const OurServices = () => {
       className="bg-gradient-to-br from-red-50 via-red-100 to-white py-6 sm:py-8 md:py-12 px-2 sm:px-4"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: false, amount: 0.1 }}
       variants={containerVariants}
     >
       <div className="max-w-7xl mx-auto">
@@ -132,60 +134,62 @@ const OurServices = () => {
 
         {/* Services Grid */}
         <motion.div 
-          className="grid grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 md:gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10"
           variants={containerVariants}
         >
           {services.map((service, index) => (
-            <motion.div
-              key={index}
-              className="bg-white border border-red-200 rounded-xl p-3 sm:p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full overflow-hidden"
-              variants={topToBottomVariants}
-              whileHover={{ 
-                scale: 1.03,
-                y: -10,
-                boxShadow: "0 20px 40px rgba(239, 68, 68, 0.15)",
-                borderColor: "#ef4444",
-                transition: { duration: 0.3 }
-              }}
-              whileTap={{ scale: 0.98 }}
-            >
-              {/* Service Image */}
-               <motion.div 
-                className="flex items-center justify-center w-full max-w-full h-[180px] sm:w-56 sm:h-56 md:w-64 md:h-64 bg-transparent mb-2 sm:mb-3 md:mb-4 mx-auto p-0 border-0 overflow-hidden"
+            <Link href={`/services?name=${encodeURIComponent(service.title)}`} passHref>
+              <motion.div
+                key={index}
+                className="bg-white border border-red-200 rounded-xl p-6 sm:p-8 md:p-10 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full overflow-hidden"
+                variants={topToBottomVariants}
                 whileHover={{ 
-                  scale: 1.1,
-                  transition: { duration: 0.6 }
-                }}
-              >
-                <motion.img
-                  src={service.image}
-                  alt={service.title}
-                  className="object-contain w-full max-w-full h-full max-h-[180px] sm:w-56 sm:h-56 md:w-64 md:h-64 m-0 p-0 border-0"
-                  initial={{ scale: 1 }}
-                  whileHover={{ scale: 1.15 }}
-                  transition={{ duration: 0.4 }}
-                />
-               </motion.div>
-
-              {/* Service Title */}
-              <motion.h3 
-                className="text-base sm:text-lg md:text-xl font-bold text-red-800 mb-1.5 sm:mb-2 md:mb-3 text-center"
-                whileHover={{ 
-                  color: "#b91c1c",
+                  scale: 1.03,
+                  y: -10,
+                  boxShadow: "0 20px 40px rgba(239, 68, 68, 0.15)",
+                  borderColor: "#ef4444",
                   transition: { duration: 0.3 }
                 }}
+                whileTap={{ scale: 0.98 }}
               >
-                {service.title}
-              </motion.h3>
+                {/* Service Image */}
+                <motion.div 
+                  className="flex items-center justify-center w-full h-64 bg-transparent mb-6"
+                  whileHover={{ 
+                    scale: 1.1,
+                    transition: { duration: 0.6 }
+                  }}
+                >
+                  <motion.img
+                    src={service.image}
+                    alt={service.title}
+                    className="object-contain w-full h-full"
+                    initial={{ scale: 1 }}
+                    whileHover={{ scale: 1.15 }}
+                    transition={{ duration: 0.4 }}
+                  />
+                </motion.div>
 
-              {/* Service Description */}
-              <motion.p 
-                className="text-xs sm:text-sm md:text-base text-red-700 leading-relaxed mb-2 sm:mb-3 md:mb-4 text-center"
-                variants={itemVariants}
-              >
-                {service.description}
-              </motion.p>
-            </motion.div>
+                {/* Service Title */}
+                <motion.h3 
+                  className="text-xl sm:text-2xl md:text-3xl font-bold text-red-800 mb-4 text-center"
+                  whileHover={{ 
+                    color: "#b91c1c",
+                    transition: { duration: 0.3 }
+                  }}
+                >
+                  {service.title}
+                </motion.h3>
+
+                {/* Service Description */}
+                <motion.p 
+                  className="text-base sm:text-lg md:text-xl text-red-700 leading-relaxed text-center"
+                  variants={itemVariants}
+                >
+                  {service.description}
+                </motion.p>
+              </motion.div>
+            </Link>
           ))}
         </motion.div>
 

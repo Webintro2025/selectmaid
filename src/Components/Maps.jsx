@@ -9,7 +9,7 @@ const Maps = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const destinationLatLng = [28.5747879, 77.2563416];
-  const destinationAddress = 'Mandir, 258, First Floor, near Bhumiya Mata, Hari Nagar Ashram, New Delhi, Delhi 110014';
+  const destinationAddress = '258, First Floor, near Bhumiya Mata, Hari Nagar Ashram, New Delhi, Delhi 110014';
 
   // Animation variants
   const containerVariants = {

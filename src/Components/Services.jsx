@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
+import Link from 'next/link';
 
 const Services = () => {
   const scrollContainerRef = useRef(null);
@@ -123,27 +124,27 @@ const Services = () => {
       icon: "/Patient Care Attendant Services Live-in.png"
     },
     {
-      title: "Male Helper or Cleaner or House Keeping Staff for home",
+      title: "Male Helper or Housekeeping Staff",
       description: "Male helpers for cleaning, housekeeping, and home maintenance. Suitable for large homes and families needing extra support.",
       icon: "/Male Helper or Cleaner or House Keeping Staff for hom.png"
     },
     {
-      title: "New born baby maid or japa maid",
+      title: "Newborn Baby Maid or Japa Maid",
       description: "Specialized japa maids for newborn care, mother support, and postnatal services. Gentle and caring staff for your family.",
       icon: "/New born baby maid or japa maid.png"
     },
     {
-      title: "English Speaking Overseas Maid",
+      title: "English-Speaking Overseas Maid",
       description: "English-speaking maids for overseas assignments. Trained for international standards and multicultural homes.",
       icon: "/English Speaking Overseas Maid.png"
     },
     {
-      title: "Paasport Holder Maid Cook Nanny for Overseas",
+      title: "Passport Holder Maid, Cook, Nanny Overseas",
       description: "Passport holder maids, cooks, and nannies for overseas jobs. Verified staff ready for international placements.",
       icon: "/Paasport Holder Maid Cook Nanny for Overseas.png"
     },
     {
-      title: "24 Hours live-in House Maid, Cook, Nanny in Delhi",
+      title: "24 Hours Live-in House Maid, Cook, Nanny",
       description: "Round-the-clock live-in maids, cooks, and nannies available in Delhi. Trusted staff for complete home care and support.",
       icon: "/24 Hours live-in House Maid, Cook, Nanny in Delhi.png"
     }
@@ -164,14 +165,14 @@ const Services = () => {
           variants={itemVariants}
         >
           <motion.h1 
-            className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight mb-3 sm:mb-4 md:mb-6 bg-gradient-to-r from-red-500 to-gray-600 bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-3 sm:mb-4 md:mb-6 bg-gradient-to-r from-red-500 to-gray-600 bg-clip-text text-transparent"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
             Domestic Care & Maid Services
           </motion.h1>
           <motion.p 
-            className="text-xs sm:text-sm md:text-base leading-relaxed max-w-3xl mx-auto text-gray-600"
+            className="text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto text-gray-600"
             variants={itemVariants}
           >
             We provide comprehensive business registration and compliance services to help your business grow with complete legal protection and professional expertise.
@@ -184,14 +185,12 @@ const Services = () => {
             className="lg:col-span-6"
             variants={itemVariants}
           >
-       
             <motion.p 
-              className="text-xs sm:text-sm md:text-base leading-relaxed max-w-xl mb-4 sm:mb-6 md:mb-10"
+              className="text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mb-4 sm:mb-6 md:mb-10"
               variants={itemVariants}
             >
               Select Maid is dedicated to providing professional, reliable, and caring domestic staff for homes across India and overseas. Our motive is to make your life easier by connecting you with trusted maids, nannies, nurses, and helpers who are trained to deliver the highest standards of service.
-                            We understand the importance of a safe, clean, and well-managed home. Whether you need a live-in maid, a baby care specialist, a patient attendant, or a cook, our team ensures you get the right person for your needs. We also help domestic workers find rewarding job opportunities, improving lives for both families and staff.
-             
+              We understand the importance of a safe, clean, and well-managed home. Whether you need a live-in maid, a baby care specialist, a patient attendant, or a cook, our team ensures you get the right person for your needs. We also help domestic workers find rewarding job opportunities, improving lives for both families and staff.
             </motion.p>
             <motion.img 
               alt="Professional Maid and Domestic Care Services" 
@@ -316,70 +315,53 @@ const Services = () => {
                 </motion.div>
               </motion.div>
               {services.map((service, index) => (
-                <motion.div
-                  key={service.title}
-                  className="bg-white border border-gray-200 rounded-lg p-3 sm:p-4 shadow-sm"
-                  variants={serviceCardVariants}
-                  whileHover={{ 
-                    scale: 1.02,
-                    boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
-                    borderColor: "0EA5E9",
-                    x: 5
-                  }}
-                  transition={{ duration: 0.3 }}
-                  custom={index}
-                >
-                  <motion.div 
-                    className="flex items-start gap-2 sm:gap-3"
-                    whileHover={{ x: 2 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <motion.img 
-                      alt="Service icon" 
-                      className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10" 
-                      src={service.icon}
-                      whileHover={{ 
-                        rotate: 360,
-                        scale: 1.1
-                      }}
-                      transition={{ duration: 0.6 }}
-                    />
-                    <div className="flex-1">
-                      <motion.h3 
-                        className="text-xs sm:text-sm md:text-base font-bold leading-snug mb-1 sm:mb-2 text-gray-800"
-                        whileHover={{ color: "#0EA5E9" }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        {service.title}
-                      </motion.h3>
-                      <motion.p 
-                        className="text-xs sm:text-xs md:text-sm leading-relaxed text-gray-600 line-clamp-3"
-                        whileHover={{ color: "#374151" }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        {service.description}
-                      </motion.p>
-                    </div>
-                  </motion.div>
-                  <motion.div 
-                    className="mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-gray-100"
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
+                <Link key={service.title} href={`/services?name=${encodeURIComponent(service.title)}`} passHref>
+                  <motion.div
+                    className="bg-white border border-gray-200 rounded-lg p-3 sm:p-4 shadow-sm"
+                    variants={serviceCardVariants}
+                    whileHover={{ 
+                      scale: 1.02,
+                      boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+                      borderColor: "0EA5E9",
+                      x: 5
+                    }}
                     transition={{ duration: 0.3 }}
+                    custom={index}
                   >
-                    <motion.button
-                      className="text-red-600 font-semibold text-xs sm:text-sm hover:text-red-800 flex items-center gap-1"
-                      whileHover={{ x: 3 }}
-                      whileTap={{ scale: 0.95 }}
+                    <motion.div 
+                      className="flex items-start gap-2 sm:gap-3"
+                      whileHover={{ x: 2 }}
+                      transition={{ duration: 0.2 }}
                     >
-                      <span style={{ color: '#E11D48' }}>Learn More</span>
-                      <motion.i 
-                        className="fas fa-arrow-right text-xs sm:text-sm"
-                        whileHover={{ x: 2 }}
+                      <motion.img 
+                        alt="Service icon" 
+                        className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10" 
+                        src={service.icon}
+                        whileHover={{ 
+                          rotate: 360,
+                          scale: 1.1
+                        }}
+                        transition={{ duration: 0.6 }}
                       />
-                    </motion.button>
+                      <div className="flex-1">
+                        <motion.h3 
+                          className="text-xs sm:text-sm md:text-base font-bold leading-snug mb-1 sm:mb-2 text-gray-800"
+                          whileHover={{ color: "#0EA5E9" }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {service.title}
+                        </motion.h3>
+                        <motion.p 
+                          className="text-xs sm:text-xs md:text-sm leading-relaxed text-gray-600 line-clamp-3"
+                          whileHover={{ color: "#374151" }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {service.description}
+                        </motion.p>
+                      </div>
+                    </motion.div>
                   </motion.div>
-                </motion.div>
+                </Link>
               ))}
             </motion.div>
           </motion.section>

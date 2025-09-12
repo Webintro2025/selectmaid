@@ -8,11 +8,11 @@ const maidServices = [
   "Home Nurse Services",
   "Baby care Services Live-in",
   "Patient Care Attendant Services Live-in",
-  "Male Helper or Cleaner or House Keeping Staff for home",
-  "New born baby maid or japa maid",
-  "English Speaking Overseas Maid",
-  "Paasport Holder Maid Cook Nanny for Overseas",
-  "24 Hours live-in House Maid, Cook, Nanny in Delhi"
+  "Male Helper or Housekeeping Staff",
+  "Newborn Baby Maid or Japa Maid",
+  "English-Speaking Overseas Maid",
+  "Passport Holder Maid, Cook, Nanny Overseas",
+  "24 Hours Live-in House Maid, Cook, Nanny"
 ];
 
 const Footer = () => {
@@ -131,7 +131,7 @@ const Footer = () => {
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.6 }}
               >
-                <p><strong>Address:</strong> Mandir, 258, First Floor, near Bhumiya Mata, Hari Nagar Ashram, New Delhi, Delhi 110014</p>
+                <p><strong>Address:</strong> 258, First Floor, near Bhumiya Mata, Hari Nagar Ashram, New Delhi, Delhi 110014</p>
                 <p>Your trusted partner for all domestic care and maid service needs.</p>
               </motion.div>
             </div>
@@ -274,7 +274,7 @@ const Footer = () => {
                     <motion.p 
                       className="text-black font-semibold"
                     >
-                      Mandir, 258, First Floor, near Bhumiya Mata, Hari Nagar Ashram, New Delhi, Delhi 110014
+                      258, First Floor, near Bhumiya Mata, Hari Nagar Ashram, New Delhi, Delhi 110014
                     </motion.p>
                   </div>
                 </motion.div>

@@ -1,6 +1,8 @@
 "use client"
 import React from 'react'
 import { motion } from 'framer-motion'
+import Link from 'next/link';
+import servicesData from '@/servicesData';
 
 const Teams = () => {
   // Animation variants
@@ -34,52 +36,6 @@ const Teams = () => {
     }
   };
 
-  const partners = 
-    [
-  {
-    "service": "Maid Services Live-in 24H",
-    "description": "We provide all types of Maids, Helpers, and Cleaners for homes, kothis, offices, etc.",
-    "image": "/House Maid Live-in Services.png"
-  },
-  {
-    "service": "New Born Baby Maid / Japa",
-    "description": "Available 24h live-in new born baby maid in Delhi NCR. Salary ₹30,000. Well experienced (10+ years).",
-    "image": "/New born baby maid or japa maid.png"
-  },
-  {
-    "service": "Patient Care Attendant Services Live-in",
-    "description": "We provide all types of home care services like patient care, attendant, elder care, and home nurse. Live-in available.",
-    "image": "/Patient Care Attendant Services Live-in.png"
-  },
-  {
-    "service": "Cook Services Live-in",
-    "description": "Home cook services, live-in available.",
-    "image": "/Paasport Holder Maid Cook Nanny for Overseas.png"
-  },
-  {
-    "service": "Baby Or Nanny Live-in 24h",
-    "description": "Professional nannies and baby care staff available for 24h live-in service.",
-    "image": "/Baby care Services Live-in.png"
-  },
-  {
-    "service": "How We Can Get Best Maid Services",
-    "description": "Contact to get best maid services.",
-    "image": "/House Maid Live-in Services.png"
-  },
-  {
-    "service": "House Maid Services Delhi",
-    "description": "Contact us for house maid services in Delhi.",
-    "image": "/24 Hours live-in House Maid, Cook, Nanny in Delhi.png"
-  },
-  {
-    "service": "Hire Maid Cook Services in Delhi Noida",
-    "description": "We have Bengali, Jharkhand, and Odisha maids available for live-in service.",
-    "image": "/Male Helper or Cleaner or House Keeping Staff for hom.png"
-  }
-]
-
-  ;
-
   return (
     <div className="bg-gradient-to-br from-red-100 via-red-200 to-white py-8 sm:py-12 md:py-20">
       <motion.div 
@@ -95,14 +51,14 @@ const Teams = () => {
           variants={cardVariants}
         >
           <motion.h2 
-            className="text-xl sm:text-2xl md:text-3xl font-extrabold leading-tight mb-3 sm:mb-4 md:mb-6 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent"
+            className="text-lg sm:text-xl md:text-2xl font-extrabold leading-tight mb-3 sm:mb-4 md:mb-6 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
             Our Partners & Their Expertise
           </motion.h2>
           <motion.p 
-            className="text-[11px] sm:text-xs md:text-sm leading-relaxed max-w-3xl mx-auto text-red-700"
+            className="text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto text-red-700"
             variants={cardVariants}
           >
             We collaborate with top domestic staffing agencies to bring you the best maids, nannies, cooks, and attendants.
@@ -114,9 +70,9 @@ const Teams = () => {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
           variants={containerVariants}
         >
-          {partners.map((partner, index) => (
+          {servicesData.map((service, index) => (
             <motion.div
-              key={partner.service}
+              key={service.title}
               className="relative group"
               variants={cardVariants}
               custom={index}
@@ -139,28 +95,27 @@ const Teams = () => {
 
                 {/* Content */}
                 <div className="relative z-10">
+                   <Link href={`/services?name=${encodeURIComponent(service.title)}`} onClick={() => { setIsMenuOpen(false); setIsServicesOpen(false); }}>
+                   
                   <motion.img
-                    src={partner.image}
-                    alt={partner.service}
+                    src={`/${service.image}`}
+                    alt={service.title}
                     className="w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 object-cover rounded-xl mx-auto mb-2 group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                     initial={{ scale: 1 }}
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.4 }}
                   />
+                    </Link>
                   <motion.h3
-                    className="text-xs sm:text-sm md:text-base font-bold text-red-800 mb-1 text-center"
+                    className="text-sm sm:text-base md:text-lg font-bold text-red-800 mb-1 text-center"
                     whileHover={{ scale: 1.02 }}
                   >
-                    {partner.service}
+                    <Link href={`/services?name=${encodeURIComponent(service.title)}`} onClick={() => { setIsMenuOpen(false); setIsServicesOpen(false); }}>
+                      {service.title}
+                    </Link>
                   </motion.h3>
-                  <motion.p
-                    className="text-[10px] sm:text-xs md:text-sm text-red-700 text-center mb-2"
-                    whileHover={{ x: 2 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {partner.description}
-                  </motion.p>
+                
                 </div>
               </motion.div>
             </motion.div>
@@ -186,13 +141,13 @@ const Teams = () => {
             />
             <div className="relative z-10">
               <motion.h3 
-                className="text-base sm:text-lg md:text-2xl font-bold mb-2 sm:mb-3 md:mb-4"
+                className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 md:mb-4"
                 variants={cardVariants}
               >
                 Ready to Work with Our Maid?
               </motion.h3>
               <motion.p 
-                className="text-xs sm:text-sm md:text-base mb-3 sm:mb-4 md:mb-6 opacity-90"
+                className="text-sm sm:text-base md:text-lg mb-3 sm:mb-4 md:mb-6 opacity-90"
                 variants={cardVariants}
               >
                 We collaborate with top domestic staffing agencies to bring you the best maids, nannies, cooks, and attendants.

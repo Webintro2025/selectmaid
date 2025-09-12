@@ -150,17 +150,19 @@ const Navbar = () => {
               transition: { duration: 0.3 }
             }}
           >
-            <motion.img 
-              alt="Select Maid logo" 
-              className="object-contain cursor-pointer w-12 sm:w-[70px]" 
-              height={50} 
-              src="/logo.png" 
-              width={70}
-              whileHover={{ 
-                rotate: [0, -5, 5, 0],
-                transition: { duration: 0.5 }
-              }}
-            />
+            <Link href="/">
+              <motion.img 
+                alt="Select Maid logo" 
+                className="object-contain cursor-pointer w-12 sm:w-[70px]" 
+                height={50} 
+                src="/logo.png" 
+                width={70}
+                whileHover={{ 
+                  rotate: [0, -5, 5, 0],
+                  transition: { duration: 0.5 }
+                }}
+              />
+            </Link>
           </motion.div>
           <motion.ul 
             className="hidden md:flex items-center space-x-6 text-sm font-semibold relative z-[10000]"

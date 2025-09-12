@@ -121,9 +121,9 @@ const GetInTouch = () => {
                 <i className="fas fa-building"></i>
               </motion.span>
               <div>
-                <div className="text-slate-600 font-semibold text-[10px] sm:text-xs md:text-sm">Company Name</div>
+                <div className="text-slate-600 font-semibold text-sm sm:text-lg md:text-xl">Company Name</div>
                 <motion.div 
-                  className="text-slate-800 font-bold text-[10px] sm:text-xs md:text-base"
+                  className="text-slate-800 font-bold text-sm sm:text-lg md:text-xl"
                   whileHover={{ 
                     color: "#1e40af",
                     transition: { duration: 0.3 }
@@ -155,9 +155,9 @@ const GetInTouch = () => {
                 <i className="fas fa-envelope"></i>
               </motion.span>
               <div>
-                <div className="text-slate-600 font-semibold text-[10px] sm:text-xs md:text-sm">Mail ID</div>
+                <div className="text-slate-600 font-semibold text-sm sm:text-lg md:text-xl">Mail ID</div>
                 <motion.div 
-                  className="text-slate-800 font-bold text-[10px] sm:text-xs md:text-base"
+                  className="text-slate-800 font-bold text-sm sm:text-lg md:text-xl"
                   whileHover={{ 
                     color: "#1e40af",
                     transition: { duration: 0.3 }
@@ -189,15 +189,15 @@ const GetInTouch = () => {
                 <i className="fas fa-map-marker-alt"></i>
               </motion.span>
               <div>
-                <div className="text-slate-600 font-semibold text-[10px] sm:text-xs md:text-sm">Address</div>
+                <div className="text-slate-600 font-semibold text-sm sm:text-lg md:text-xl">Address</div>
                 <motion.div 
-                  className="text-slate-800 font-bold text-[10px] sm:text-xs md:text-base"
+                  className="text-slate-800 font-bold text-sm sm:text-lg md:text-xl"
                   whileHover={{ 
                     color: "#1e40af",
                     transition: { duration: 0.3 }
                   }}
                 >
-                  Mandir, 258, First Floor, near Bhumiya Mata, Hari Nagar Ashram, New Delhi, Delhi 110014
+                  258, First Floor, near Bhumiya Mata, Hari Nagar Ashram, New Delhi, Delhi 110014
                 </motion.div>
               </div>
             </motion.div>
@@ -223,9 +223,9 @@ const GetInTouch = () => {
                 <i className="fas fa-phone-alt"></i>
               </motion.span>
               <div>
-                <div className="text-slate-600 font-semibold text-[10px] sm:text-xs md:text-sm">Phone Number</div>
+                <div className="text-slate-600 font-semibold text-sm sm:text-lg md:text-xl">Phone Number</div>
                 <motion.div 
-                  className="text-slate-800 font-bold text-[10px] sm:text-xs md:text-base"
+                  className="text-slate-800 font-bold text-sm sm:text-lg md:text-xl"
                   whileHover={{ 
                     color: "#1e40af",
                     transition: { duration: 0.3 }
