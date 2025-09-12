@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { motion } from 'framer-motion'
+import Link from "next/link";
 
 const Slides = () => {
   // Updated images from public folder
@@ -81,88 +82,90 @@ const Slides = () => {
           >
             {/* First set of images - Increased size */}
             {images.map((image, index) => (
-              <motion.div
-                key={`first-${index}`}
-                className="flex-shrink-0 relative group"
-                variants={slideVariants}
-                whileHover={{
-                  scale: 1.15,
-                  y: -10,
-                  zIndex: 10,
-                  transition: { duration: 0.4 }
-                }}
-              >
+              <Link href={`/services?name=${encodeURIComponent(image.alt)}`} passHref>
                 <motion.div
-                  className="w-[200px] h-[100px] rounded-xl shadow-xl border-2 border-white group-hover:border-blue-400 transition-all duration-300"
+                  key={`first-${index}`}
+                  className="flex-shrink-0 relative group"
+                  variants={slideVariants}
                   whileHover={{
-                    boxShadow: "0 15px 30px rgba(59, 130, 246, 0.3)",
-                    transition: { duration: 0.3 }
+                    scale: 1.15,
+                    y: -10,
+                    zIndex: 10,
+                    transition: { duration: 0.4 }
                   }}
                 >
-                  <motion.img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-[220px] object-cover group-hover:scale-110 transition-transform duration-500"
-                    loading="lazy"
+                  <motion.div
+                    className="w-[200px] h-[100px] rounded-xl shadow-xl border-2 border-white group-hover:border-blue-400 transition-all duration-300"
                     whileHover={{
-                      filter: "brightness(1.1) saturate(1.2)",
+                      boxShadow: "0 15px 30px rgba(59, 130, 246, 0.3)",
                       transition: { duration: 0.3 }
                     }}
-                  />
-                </motion.div>
-                
-                {/* Enhanced Hover overlay */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-t from-blue-900/85 via-blue-800/40 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl flex items-end justify-center p-4 transition-opacity duration-300"
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                >
-                  <motion.p
-                    className="text-white text-lg font-bold text-center leading-tight"
-                    initial={{ y: 25, opacity: 0 }}
-                    whileHover={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.3 }}
                   >
-                    {image.alt}
-                  </motion.p>
-                </motion.div>
+                    <motion.img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-[220px] object-cover group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
+                      whileHover={{
+                        filter: "brightness(1.1) saturate(1.2)",
+                        transition: { duration: 0.3 }
+                      }}
+                    />
+                  </motion.div>
+                  
+                  {/* Enhanced Hover overlay */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-t from-blue-900/85 via-blue-800/40 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl flex items-end justify-center p-4 transition-opacity duration-300"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                  >
+                    <motion.p
+                      className="text-white text-lg font-bold text-center leading-tight"
+                      initial={{ y: 25, opacity: 0 }}
+                      whileHover={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {image.alt}
+                    </motion.p>
+                  </motion.div>
 
-                {/* Enhanced Floating icons */}
-                <motion.div
-                  className="absolute -top-3 -right-3 w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg"
-                  animate={{
-                    y: [0, -8, 0],
-                    scale: [1, 1.2, 1]
-                  }}
-                  transition={{
-                    duration: 2.5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: index * 0.2
-                  }}
-                >
-                  <motion.i 
-                    className="fas fa-star text-white text-sm"
+                  {/* Enhanced Floating icons */}
+                  <motion.div
+                    className="absolute -top-3 -right-3 w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg"
                     animate={{
-                      rotate: [0, 180, 360]
+                      y: [0, -8, 0],
+                      scale: [1, 1.2, 1]
                     }}
                     transition={{
-                      duration: 4,
+                      duration: 2.5,
                       repeat: Infinity,
-                      ease: "linear"
+                      ease: "easeInOut",
+                      delay: index * 0.2
                     }}
-                  />
-                </motion.div>
+                  >
+                    <motion.i 
+                      className="fas fa-star text-white text-sm"
+                      animate={{
+                        rotate: [0, 180, 360]
+                      }}
+                      transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "linear"
+                      }}
+                    />
+                  </motion.div>
 
-                {/* Service indicator */}
-                <motion.div
-                  className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  whileHover={{ scale: 1, opacity: 1 }}
-                >
-                  <span className="text-xs font-semibold text-blue-600">Service {index + 1}</span>
+                  {/* Service indicator */}
+                  <motion.div
+                    className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    whileHover={{ scale: 1, opacity: 1 }}
+                  >
+                    <span className="text-xs font-semibold text-blue-600">Service {index + 1}</span>
+                  </motion.div>
                 </motion.div>
-              </motion.div>
+              </Link>
             ))}
 
             {/* Second set for seamless loop - Increased size */}
