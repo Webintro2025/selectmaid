@@ -84,7 +84,7 @@ const Maps = () => {
           <div style="text-align: center; padding: 10px;">
             <strong style="color: #1e40af; font-size: 16px;">SelectMaid</strong><br/>
             <span style="color: #64748b; font-size: 14px;">${destinationAddress}</span><br/>
-            <span style="color: #059669; font-size: 12px; margin-top: 5px; display: block;">📞 +91 7290021461<br/>📞 +91 7290007424</span>
+            <span style="color: #059669; font-size: 12px; margin-top: 5px; display: block;">📞 +91 7290007484<br/>📞 +91 7290007424</span>
           </div>
         `).openPopup();
 
@@ -303,7 +303,7 @@ const Maps = () => {
               </motion.button>
 
               <motion.button
-                onClick={() => window.open('tel:+919971669475', '_blank')}
+                onClick={() => window.open('tel:+917290007484', '_blank')}
                 className="border-2 border-red-500 text-red-500 px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-lg font-semibold text-xs sm:text-sm md:text-base hover:bg-red-500 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3"
                 whileHover={{ 
                   scale: 1.05,
@@ -355,7 +355,7 @@ const Maps = () => {
                       ease: "easeInOut"
                     }}
                   />
-                  <span className="text-xs sm:text-sm md:text-base">+91 7290021461</span>
+                  <span className="text-xs sm:text-sm md:text-base">+91 7290007484</span>
                 </motion.div>
                 
                 <motion.div 

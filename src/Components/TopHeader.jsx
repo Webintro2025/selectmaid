@@ -63,10 +63,10 @@ const TopHeader = () => {
           >
             <span className="text-red-300">📱</span>
             <a 
-              href="tel:+917290021461"
+              href="tel:+917290007484"
               className="hover:text-red-300 transition-colors duration-200"
             >
-              (+91) 7290021461
+              (+91) 7290007484
             </a>
           </motion.div>
           <motion.div 

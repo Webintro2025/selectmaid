@@ -11,8 +11,8 @@ const OurServices = () => {
     visible: {
       opacity: 1,
       transition: {
-        duration: 0.8,
-        staggerChildren: 0.2
+        duration: 0.1, // faster
+        staggerChildren: 0.1 // faster
       }
     }
   };
@@ -28,7 +28,7 @@ const OurServices = () => {
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.6,
+        duration: 0.1, // faster
         ease: "easeOut"
       }
     }
@@ -43,7 +43,7 @@ const OurServices = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
+        duration: 0.1, // faster
         ease: "easeOut"
       }
     }
@@ -99,8 +99,7 @@ const OurServices = () => {
     <motion.section 
       className="bg-gradient-to-br from-red-50 via-red-100 to-white py-6 sm:py-8 md:py-12 px-2 sm:px-4"
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.1 }}
+      animate="visible"
       variants={containerVariants}
     >
       <div className="max-w-7xl mx-auto">
@@ -125,12 +124,7 @@ const OurServices = () => {
             whileInView={{ width: "6rem" }}
             transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
           />
-          <motion.p 
-            className="text-xs sm:text-sm md:text-base text-red-600 max-w-3xl mx-auto"
-            variants={itemVariants}
-          >
-            Comprehensive business registration and compliance services tailored for your success
-          </motion.p>
+        
         </motion.div>
 
         {/* Services Grid */}
@@ -227,7 +221,7 @@ const OurServices = () => {
                 transition: { duration: 0.3 }
               }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open('https://wa.me/919971669475', '_blank')}
+              onClick={() => window.open('https://wa.me/917290007484', '_blank')}
             >
               <motion.span
                 className="flex items-center gap-1.5 sm:gap-2"

@@ -145,7 +145,7 @@ const Teams = () => {
                 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 md:mb-4"
                 variants={cardVariants}
               >
-                Ready to Work with Our Maid?
+                Ready to hire our Maids, Nannies, Cooks, or Attendants?
               </motion.h3>
               <motion.p 
                 className="text-sm sm:text-base md:text-lg mb-3 sm:mb-4 md:mb-6 opacity-90"
@@ -160,9 +160,9 @@ const Teams = () => {
                   boxShadow: "0 15px 30px rgba(255,255,255,0.3)"
                 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.open('https://wa.me/919971669475', '_blank')}
+                onClick={() => window.open('https://wa.me/9172900074249', '_blank')}
               >
-                Schedule Consultation
+                Contact Us on WhatsApp
               </motion.button>
             </div>
           </motion.div>

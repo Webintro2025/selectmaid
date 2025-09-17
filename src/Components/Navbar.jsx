@@ -39,7 +39,9 @@ const Navbar = () => {
     'Newborn Baby Maid or Japa Maid',
     'English-Speaking Overseas Maid',
     'Passport Holder Maid, Cook, Nanny Overseas',
-    '24 Hours Live-in House Maid, Cook, Nanny'
+    '24 Hours Live-in House Maid, Cook, Nanny',
+    'Home Cook Services',
+    'Home Chef / Master Cook Services'
   ];
 
   // Animation variants

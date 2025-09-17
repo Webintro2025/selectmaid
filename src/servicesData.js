@@ -170,6 +170,48 @@ const ServiceData=[
       "Safety and reliability"
     ]
   }
+  ,
+  {
+  "title": "Home Cook Services",
+  "image": "24 Hours live-in House Maid, Cook, Nanny in Delhi.png",
+  "description": "Our professional home cook services in Delhi bring healthy, hygienic, and delicious meals right to your dining table. Experienced cooks prepare a wide variety of cuisines based on your family’s taste preferences and dietary requirements. From daily meals to special occasions, our cooks handle everything—ingredient preparation, cooking, serving, and maintaining cleanliness in the kitchen. With a focus on fresh ingredients and balanced nutrition, we ensure your family enjoys wholesome, home-style food every day. Choose Select Maid for reliable, skilled cooks who make mealtimes stress-free and enjoyable.",
+  "advantages": [
+    "Fresh and hygienic home-cooked meals",
+    "Customized menus as per taste and diet",
+    "Convenient daily meal preparation",
+    "Time-saving and hassle-free cooking",
+    "Trusted and experienced cooks"
+  ],
+  "mainCharacteristics": [
+    "Skilled in multiple cuisines",
+    "Focus on nutrition and taste",
+    "Meal prep for families and individuals",
+    "Kitchen cleanliness maintained",
+    "Available for daily or occasional cooking"
+  ]
+}
+,
+{
+  "title": "Home Chef / Master Cook Services",
+  "image": "services.png",
+  "description": "Our Home Chef and Master Cook services in Delhi are designed for families and individuals who want restaurant-quality meals prepared at home. Highly skilled chefs specialize in a wide range of cuisines—Indian, Continental, Chinese, Italian, and more—tailored to your taste and dietary needs. Whether it’s daily meals, festive feasts, or hosting special guests, our master cooks bring creativity, precision, and hygiene to your kitchen. They not only cook but also plan menus, select ingredients, and ensure every dish is served with professional finesse. Choose Select Maid for a premium cooking experience that blends health, taste, and convenience right at your home.",
+  "advantages": [
+    "Restaurant-style meals at home",
+    "Wide variety of cuisines",
+    "Customized menus for occasions",
+    "Expertly crafted dishes with finesse",
+    "Premium and hygienic cooking service"
+  ],
+  "mainCharacteristics": [
+    "Professional and experienced chefs",
+    "Menu planning and customization",
+    "Expertise in Indian & international cuisines",
+    "Focus on presentation and taste",
+    "Ideal for families, events, and guests"
+  ]
+}
+
+
 ]
 
 export default ServiceData;

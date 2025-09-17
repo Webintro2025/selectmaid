@@ -385,13 +385,13 @@ const Services = () => {
               className="text-base sm:text-lg md:text-2xl font-bold mb-2 sm:mb-3 md:mb-4"
               variants={itemVariants}
             >
-              Ready to Start Your Business?
+              Need Help Finding the Right Domestic Staff?
             </motion.h3>
             <motion.p 
               className="text-xs sm:text-sm md:text-base mb-3 sm:mb-4 md:mb-6 opacity-90"
               variants={itemVariants}
             >
-            Get Expert Services for Your Domestic Needs and Maid Selection
+              Contact Select Maid today for personalized assistance. Our experts will help you find the perfect maid, nanny, nurse, or helper to meet your household needs. 
             </motion.p>
             <motion.button 
               className="bg-white text-red-600 px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-md font-semibold text-xs sm:text-sm md:text-base hover:bg-gray-100 transition-colors duration-200"
@@ -400,7 +400,7 @@ const Services = () => {
                 boxShadow: "0 10px 25px rgba(255,255,255,0.2)"
               }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open('https://wa.me/919971669475', '_blank')}
+              onClick={() => window.open('https://wa.me/917290007424', '_blank')}
             >
               Contact Us Today
             </motion.button>

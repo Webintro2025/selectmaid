@@ -212,7 +212,7 @@ const ContactClient = () => {
                 transition: { duration: 0.3 }
               }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open('tel:+919821575784', '_blank')}
+              onClick={() => window.open('tel:+917290007484', '_blank')}
             >
               <motion.i 
                 className="fas fa-phone"
@@ -272,36 +272,7 @@ const ContactClient = () => {
         animate={{ scale: 1 }}
         transition={{ delay: 2, duration: 0.5 }}
       >
-        <motion.button
-          className="bg-green-500 text-white w-12 h-12 sm:w-16 sm:h-16 rounded-full shadow-lg flex items-center justify-center"
-          whileHover={{ 
-            scale: 1.1,
-            boxShadow: "0 10px 25px rgba(34, 197, 94, 0.4)",
-            transition: { duration: 0.3 }
-          }}
-          whileTap={{ scale: 0.9 }}
-          animate={{ 
-            y: [0, -5, 0]
-          }}
-          transition={{ 
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          onClick={() => window.open('https://wa.me/919821575784', '_blank')}
-        >
-          <motion.i 
-            className="fab fa-whatsapp text-lg sm:text-2xl"
-            animate={{ 
-              rotate: [0, 10, -10, 0]
-            }}
-            transition={{ 
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-        </motion.button>
+       
       </motion.div>
     </motion.div>
   )

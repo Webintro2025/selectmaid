@@ -7,7 +7,7 @@ const whyChooseUsPoints = [
     icon: "⭐",
     title: "Trusted & Registered Company",
     description:
-      "We are a registered brand under Lassie HR Solutions Pvt. Ltd., recognized by the Ministry of Corporate Affairs (India), ensuring legal compliance and credibility.",
+      "We are a registered brand under MSME, recognized by the Ministry of Corporate Affairs (India), ensuring legal compliance and credibility.",
   },
   {
     icon: "👩‍💼",
