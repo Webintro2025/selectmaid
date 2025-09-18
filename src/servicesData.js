@@ -153,7 +153,7 @@ const ServiceData=[
   },
   {
     "title": "24 Hours Live-in House Maid, Cook, Nanny",
-    "image": "24 Hours live-in House Maid, Cook, Nanny in Delhi.png",
+    "image": "Home.png",
     "description": "Get dedicated, 24-hour live-in maids, cooks, and nannies in Delhi for complete home management and personal care. Available for continuous support, these staff assist with chores, meal preparation, child care, and elder help. Thoroughly screened personnel ensure safety, reliability, and peace of mind for every member of your household. Our team is always available for emergencies, special occasions, and can adapt to changing family needs. With Select Maid, you enjoy uninterrupted support, comfort, and a harmonious home environment.",
     "advantages": [
       "Continuous support for all needs",
@@ -173,7 +173,7 @@ const ServiceData=[
   ,
   {
   "title": "Home Cook Services",
-  "image": "24 Hours live-in House Maid, Cook, Nanny in Delhi.png",
+  "image": "Home.png",
   "description": "Our professional home cook services in Delhi bring healthy, hygienic, and delicious meals right to your dining table. Experienced cooks prepare a wide variety of cuisines based on your family’s taste preferences and dietary requirements. From daily meals to special occasions, our cooks handle everything—ingredient preparation, cooking, serving, and maintaining cleanliness in the kitchen. With a focus on fresh ingredients and balanced nutrition, we ensure your family enjoys wholesome, home-style food every day. Choose Select Maid for reliable, skilled cooks who make mealtimes stress-free and enjoyable.",
   "advantages": [
     "Fresh and hygienic home-cooked meals",

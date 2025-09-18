@@ -147,7 +147,7 @@ const Services = () => {
     {
       title: "24 Hours Live-in House Maid, Cook, Nanny",
       description: "Round-the-clock live-in maids, cooks, and nannies available in Delhi. Trusted staff for complete home care and support.",
-      icon: "/24 Hours live-in House Maid, Cook, Nanny in Delhi.png"
+      icon: "/Home.png"
     }
   ];
 
