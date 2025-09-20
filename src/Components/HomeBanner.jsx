@@ -1,6 +1,5 @@
 "use client"
 import React, { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 
 const HomeBanner = () => {
   // Banner images for desktop and mobile
@@ -67,18 +66,12 @@ const HomeBanner = () => {
   // Only show the first banner, no text, no navigation
   return (
   <div className="relative w-full h-[40vh] sm:h-[35vh] md:h-[60vh] lg:h-[70vh] overflow-hidden sm:mt-0">
-      <AnimatePresence mode="wait">
-        <motion.img
+        <img
           key={banners[currentIndex]?.src}
           src={banners[currentIndex]?.src}
           alt="Banner"
-          className="w-full h-full object-cover absolute inset-0"
-          initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: -100, opacity: 0 }}
-          transition={{ duration: 0.7, ease: 'easeInOut' }}
+          className="w-full h-full object-cover absolute inset-0 transition-opacity duration-700"
         />
-      </AnimatePresence>
     </div>
   );
 }

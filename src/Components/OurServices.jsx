@@ -1,53 +1,9 @@
 "use client"
 import React from 'react'
-import { motion } from 'framer-motion'
 import Link from "next/link";
 import slugify from "slugify";
 
 const OurServices = () => {
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.1, // faster
-        staggerChildren: 0.1 // faster
-      }
-    }
-  };
-
-  const topToBottomVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: -50,
-      scale: 0.9
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.1, // faster
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: -30
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.1, // faster
-        ease: "easeOut"
-      }
-    }
-  };
 
   // Services data with descriptions and icons
   const services = [
@@ -96,156 +52,66 @@ const OurServices = () => {
   ];
 
   return (
-    <motion.section 
-      className="bg-gradient-to-br from-red-50 via-red-100 to-white py-6 sm:py-8 md:py-12 px-2 sm:px-4"
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-    >
+    <section className="bg-gradient-to-br from-red-50 via-red-100 to-white py-6 sm:py-8 md:py-12 px-2 sm:px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <motion.div 
-          className="text-center mb-7 sm:mb-10 md:mb-12"
-          variants={topToBottomVariants}
-        >
-          <motion.h2 
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-red-800 mb-2 sm:mb-3 md:mb-4"
-            whileHover={{ 
-              scale: 1.02,
-              color: "#b91c1c",
-              transition: { duration: 0.3 }
-            }}
-          >
+        <div className="text-center mb-7 sm:mb-10 md:mb-12">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-red-800 mb-2 sm:mb-3 md:mb-4 hover:text-red-900 hover:scale-105 transition-all duration-300">
             Our Professional Services
-          </motion.h2>
-          <motion.div 
-            className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto mb-3 sm:mb-4 md:mb-6"
-            initial={{ width: 0 }}
-            whileInView={{ width: "6rem" }}
-            transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-          />
-        
-        </motion.div>
+          </h2>
+          <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto mb-3 sm:mb-4 md:mb-6" />
+        </div>
 
         {/* Services Grid */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10"
-          variants={containerVariants}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
           {services.map((service, index) => (
-            <Link href={`/${slugify(service.title, { lower: true, strict: true })}`} passHref>
-              <motion.div
-                key={index}
-                className="bg-white border border-red-200 rounded-xl p-6 sm:p-8 md:p-10 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full overflow-hidden"
-                variants={topToBottomVariants}
-                whileHover={{ 
-                  scale: 1.03,
-                  y: -10,
-                  boxShadow: "0 20px 40px rgba(239, 68, 68, 0.15)",
-                  borderColor: "#ef4444",
-                  transition: { duration: 0.3 }
-                }}
-                whileTap={{ scale: 0.98 }}
-              >
+            <Link key={index} href={`/${slugify(service.title, { lower: true, strict: true })}`} passHref>
+              <div className="bg-white border border-red-200 rounded-xl p-6 sm:p-8 md:p-10 shadow-lg hover:shadow-xl hover:scale-105 hover:-translate-y-2 hover:border-red-400 transition-all duration-300 flex flex-col h-full overflow-hidden cursor-pointer">
                 {/* Service Image */}
-                <motion.div 
-                  className="flex items-center justify-center w-full h-64 bg-transparent mb-6"
-                  whileHover={{ 
-                    scale: 1.1,
-                    transition: { duration: 0.6 }
-                  }}
-                >
-                  <motion.img
+                <div className="flex items-center justify-center w-full h-64 bg-transparent mb-6 hover:scale-110 transition-transform duration-300">
+                  <img
                     src={service.image}
                     alt={service.title}
-                    className="object-contain w-full h-full"
-                    initial={{ scale: 1 }}
-                    whileHover={{ scale: 1.15 }}
-                    transition={{ duration: 0.4 }}
+                    className="object-contain w-full h-full hover:scale-110 transition-transform duration-300"
                   />
-                </motion.div>
+                </div>
 
                 {/* Service Title */}
-                <motion.h3 
-                  className="text-xl sm:text-2xl md:text-3xl font-bold text-red-800 mb-4 text-center"
-                  whileHover={{ 
-                    color: "#b91c1c",
-                    transition: { duration: 0.3 }
-                  }}
-                >
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-red-800 mb-4 text-center hover:text-red-900 transition-colors duration-300">
                   {service.title}
-                </motion.h3>
+                </h3>
 
                 {/* Service Description */}
-                <motion.p 
-                  className="text-base sm:text-lg md:text-xl text-red-700 leading-relaxed text-center"
-                  variants={itemVariants}
-                >
+                <p className="text-base sm:text-lg md:text-xl text-red-700 leading-relaxed text-center">
                   {service.description}
-                </motion.p>
-              </motion.div>
+                </p>
+              </div>
             </Link>
           ))}
-        </motion.div>
+        </div>
 
         {/* Bottom CTA Section */}
-        <motion.div 
-          className="text-center mt-7 sm:mt-10 md:mt-12"
-          variants={topToBottomVariants}
-        >
-          <motion.div 
-            className="bg-gradient-to-r from-red-600 to-slate-800 rounded-2xl p-4 sm:p-6 md:p-8 text-white"
-            whileHover={{ 
-              scale: 1.02,
-              boxShadow: "0 25px 50px rgba(0,0,0,0.2)",
-              transition: { duration: 0.3 }
-            }}
-          >
-            <motion.h3 
-              className="text-base sm:text-lg md:text-2xl font-bold mb-2 sm:mb-3 md:mb-4"
-              variants={itemVariants}
-            >
+        <div className="text-center mt-7 sm:mt-10 md:mt-12">
+          <div className="bg-gradient-to-r from-red-600 to-slate-800 rounded-2xl p-4 sm:p-6 md:p-8 text-white hover:scale-105 hover:shadow-2xl transition-all duration-300">
+            <h3 className="text-base sm:text-lg md:text-2xl font-bold mb-2 sm:mb-3 md:mb-4">
               Need Help Choosing the Right Service?
-            </motion.h3>
-            <motion.p 
-              className="text-xs sm:text-sm md:text-base text-blue-100 mb-3 sm:mb-4 md:mb-6"
-              variants={itemVariants}
-            >
+            </h3>
+            <p className="text-xs sm:text-sm md:text-base text-blue-100 mb-3 sm:mb-4 md:mb-6">
               Our experts are ready to guide you through the best options for your business needs
-            </motion.p>
-            <motion.button
-              className="bg-white text-red-600 px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-lg font-semibold text-xs sm:text-sm md:text-base hover:bg-red-50 transition-all duration-300"
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 10px 25px rgba(255,255,255,0.3)",
-                transition: { duration: 0.3 }
-              }}
-              whileTap={{ scale: 0.95 }}
+            </p>
+            <button
+              className="bg-white text-red-600 px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-lg font-semibold text-xs sm:text-sm md:text-base hover:bg-red-50 hover:scale-105 active:scale-95 transition-all duration-300"
               onClick={() => window.open('https://wa.me/917290007484', '_blank')}
             >
-              <motion.span
-                className="flex items-center gap-1.5 sm:gap-2"
-                whileHover={{ x: 5 }}
-                transition={{ duration: 0.3 }}
-              >
-                <motion.i 
-                  className="fab fa-whatsapp text-green-500"
-                  animate={{ 
-                    rotate: [0, 10, -10, 0]
-                  }}
-                  transition={{ 
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
+              <span className="flex items-center gap-1.5 sm:gap-2 hover:translate-x-1 transition-transform duration-300">
+                <i className="fab fa-whatsapp text-green-500 animate-pulse" />
                 Consult Our Experts
-              </motion.span>
-            </motion.button>
-          </motion.div>
-        </motion.div>
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
-    </motion.section>
+    </section>
   )
 }
 

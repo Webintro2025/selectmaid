@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react'
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import slugify from 'slugify';
 
@@ -10,24 +10,28 @@ const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isStickyServicesOpen, setIsStickyServicesOpen] = useState(false);
-  const { scrollY } = useScroll();
 
   // Handle scroll detection
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious() || 0;
-    
-    if (latest > previous && latest > 150) {
-      setHidden(true);
-    } else {
-      setHidden(false);
-    }
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > 150) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
 
-    if (latest > 100) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-  });
+      if (currentScrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Updated services list from servicesData.js
   const services = [
@@ -46,127 +50,49 @@ const Navbar = () => {
 
   // Animation variants
   const navVariants = {
-    hidden: { y: -100, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  // Sticky navbar variants
-  const stickyNavVariants = {
-    hidden: { 
-      y: -100, 
-      opacity: 0,
-      scale: 0.95
-    },
-    visible: { 
-      y: 0, 
-      opacity: 1,
-      scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 30,
-        mass: 0.8,
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const stickyItemVariants = {
-    hidden: { y: -20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const logoVariants = {
-    hidden: { scale: 0, rotate: -180 },
-    visible: {
-      scale: 1,
-      rotate: 0,
-      transition: {
-        type: "spring",
-        stiffness: 260,
-        damping: 20,
-        duration: 0.8
-      }
-    }
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
   };
 
   const menuItemVariants = {
-    hidden: { y: -20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }
+    hidden: { opacity: 0, y: -10 },
+    visible: { opacity: 1, y: 0 }
   };
 
   const buttonVariants = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 10,
-        delay: 0.6
-      }
-    }
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1 }
+  };
+
+  const stickyNavVariants = {
+    hidden: { y: -100, opacity: 0 },
+    visible: { y: 0, opacity: 1 }
+  };
+
+  const stickyItemVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: { opacity: 1, y: 0 }
   };
 
   return (
     <>
       {/* Original Navbar */}
-      <motion.div 
-        className="m-0 p-0"
-        initial="hidden"
-        animate="visible"
-        variants={navVariants}
-      >
+      <div className="m-0 p-0">
         <header className="w-full shadow-lg">
-          <motion.nav 
-            className="flex items-center justify-between px-4 md:px-8 py-3 border-b border-gray-200 bg-gradient-to-r from-white via-gray-50 to-red-50"
-            variants={navVariants}
-          >
-          <motion.div 
-            className="flex items-center space-x-2"
-            variants={logoVariants}
-            whileHover={{ 
-              scale: 1.05,
-              transition: { duration: 0.3 }
-            }}
+          <nav className="flex items-center justify-between px-4 md:px-8 py-3 border-b border-gray-200 bg-gradient-to-r from-white via-gray-50 to-red-50">
+          <div 
+            className="flex items-center space-x-2 hover:scale-105 transition-transform duration-300"
           >
             <Link href="/">
-              <motion.img 
+              <img 
                 alt="Select Maid logo" 
                 className="object-contain cursor-pointer w-12 sm:w-[70px]" 
                 height={50} 
                 src="/logo.png" 
                 width={70}
-                whileHover={{ 
-                  rotate: [0, -5, 5, 0],
-                  transition: { duration: 0.5 }
-                }}
               />
             </Link>
-          </motion.div>
+          </div>
           <motion.ul 
             className="hidden md:flex items-center space-x-6 text-sm font-semibold relative z-[10000]"
             variants={navVariants}
@@ -440,7 +366,7 @@ const Navbar = () => {
               ></motion.i>
             </motion.button>
           </motion.div>
-        </motion.nav>
+        </nav>
         
         {/* Mobile Menu */}
         <AnimatePresence>
@@ -527,7 +453,7 @@ const Navbar = () => {
         </AnimatePresence>
         
         </header>
-      </motion.div>
+      </div>
 
       {/* Sticky Navbar */}
       <motion.div 
