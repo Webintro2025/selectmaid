@@ -1,26 +1,26 @@
-// SEO metadata for About page
+// SEO metadata for About page (maid/domestic-services)
 const aboutMeta = {
-  title: "About Us | Best CA Services in India | Select Maid",
-  description: "Learn about Select Maid, your trusted partner for company registration, GST, bookkeeping, and business compliance services across India. Meet our expert team and discover why businesses choose us.",
+  title: "About Us | Trusted Domestic Help & Maid Services in Delhi | Select Maid",
+  description: "About Select Maid — we connect households in Delhi with verified and trained domestic help, maids, babysitters, and caretakers. Learn about our mission, screening process, and commitment to safe, reliable home services.",
   keywords: [
-    "About CA Services",
-    "Chartered Accountant India",
-    "Company Registration About",
-    "GST About",
-    "Bookkeeping About",
-    "Business Compliance Team"
+    "About Maid Services",
+    "Domestic Help Delhi",
+    "Verified Maids",
+    "Home Help Services",
+    "Maid Agency About",
+    "Household Assistance"
   ],
   openGraph: {
-    title: "About Us | Best CA Services in India | Select Maid",
-    description: "Learn about Select Maid, your trusted partner for company registration, GST, bookkeeping, and business compliance services across India. Meet our expert team and discover why businesses choose us.",
-  url: "https://eazy-tax.in/about",
-    siteName: "Select Maid India",
+    title: "About Us | Trusted Domestic Help & Maid Services in Delhi | Select Maid",
+    description: "About Select Maid — connecting families with trained and verified domestic helpers across Delhi. Read about our values, team, and how we ensure safe and dependable home assistance.",
+    url: "https://selectmaid.in/about",
+    siteName: "Select Maid Delhi",
     images: [
       {
         url: "/banner1.jpg",
         width: 1200,
         height: 630,
-        alt: "About Select Maid CA Services India"
+        alt: "About Select Maid - Domestic Help & Maid Services Delhi"
       }
     ],
     locale: "en_US",
@@ -28,15 +28,15 @@ const aboutMeta = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Us | Best CA Services in India | Select Maid",
-    description: "Learn about Select Maid, your trusted partner for company registration, GST, bookkeeping, and business compliance services across India. Meet our expert team and discover why businesses choose us.",
-    site: "@eazytaxdelhi",
+    title: "About Us | Trusted Domestic Help & Maid Services in Delhi | Select Maid",
+    description: "About Select Maid — connecting families with trained and verified domestic helpers across Delhi. Read about our values, team, and screening process.",
+    site: "@selectmaiddelhi",
     images: [
       "/banner1.jpg"
     ]
   },
   alternates: {
-  canonical: "https://eazy-tax.in/about"
+    canonical: "https://selectmaid.in/about"
   },
   robots: {
     index: true,

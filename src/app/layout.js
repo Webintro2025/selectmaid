@@ -17,37 +17,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Select Maid ",
-  description: "Get expert Chartered Accountant services in Delhi: Company Registration, GST Registration & Return Filing, Bookkeeping, MSME, Startup India, Society & Trust Registration. Fast, reliable, and affordable legal & tax solutions for your business.",
+  title: "Select Maid",
+  description: "Select Maid provides trusted domestic helpers and maid services across Delhi — verified staff, flexible schedules, and reliable household assistance. Find part-time, full-time, and trained home helpers for your needs.",
   keywords: [
-    "CA in Delhi",
-    "Chartered Accountant",
-    "Company Registration",
-    "GST Registration",
-    "GST Return Filing",
-    "Bookkeeping",
-    "MSME Registration",
-    "Startup India Registration",
-    "Society Registration",
-    "Trust Registration",
-    "Import Export Code",
-    "Tax Consultant",
-    "Business Compliance"
+    "Domestic Help Delhi",
+    "Maid Services",
+    "Hire Maid in Delhi",
+    "Household Help",
+    "Verified Maids",
+    "Babysitter",
+    "Caretaker",
+    "Home Assistance"
   ],
   verification: {
-    google: "LBQOEuI9wHmDQrwkzO0E6VvR48UwqmCmkrbGUTa9fPE", // ← Yeh line important hai
-  },  
+    google: "LBQOEuI9wHmDQrwkzO0E6VvR48UwqmCmkrbGUTa9fPE", // ← Yeh line important hai (preserved)
+  },
   openGraph: {
-    title: "Best CA Services in Delhi | Company Registration, GST, Bookkeeping & More",
-    description: "Expert CA services in Delhi for startups, SMEs, and businesses. Fast company registration, GST, bookkeeping, and more.",
-    url: "https://yourdomain.com/",
+    title: "Trusted Maid & Domestic Help Services in Delhi | Select Maid",
+    description: "Hire verified domestic helpers and maids in Delhi. Select Maid connects you with trained, background-checked staff for household cleaning, caregiving, babysitting, and more.",
+    url: "https://selectmaid.in/",
     siteName: "Select Maid Delhi",
     images: [
       {
         url: "/banner1.jpg",
         width: 1200,
         height: 630,
-        alt: "Best CA Services in Delhi"
+        alt: "Trusted Maid Services in Delhi"
       }
     ],
     locale: "en_US",
@@ -55,17 +50,17 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best CA Services in Delhi | Company Registration, GST, Bookkeeping & More",
-    description: "Expert CA services in Delhi for startups, SMEs, and businesses. Fast company registration, GST, bookkeeping, and more.",
-    site: "@eazytaxdelhi",
+    title: "Trusted Maid & Domestic Help Services in Delhi | Select Maid",
+    description: "Hire verified domestic helpers and maids in Delhi. Select Maid connects you with trained, background-checked staff for household cleaning, caregiving, babysitting, and more.",
+    site: "@selectmaiddelhi",
     images: [
       "/banner1.jpg"
     ]
   },
   alternates: {
-    canonical: "https://eazy-tax.in/"
+    canonical: "https://selectmaid.in/"
   },
-  metadataBase: new URL("https://eazy-tax.in/"),
+  metadataBase: new URL("https://selectmaid.in/"),
   robots: {
     index: true,
     follow: true
