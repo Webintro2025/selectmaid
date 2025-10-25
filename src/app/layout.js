@@ -30,7 +30,7 @@ export const metadata = {
     "Home Assistance"
   ],
   verification: {
-    google: "LBQOEuI9wHmDQrwkzO0E6VvR48UwqmCmkrbGUTa9fPE", // ← Yeh line important hai (preserved)
+    google: "UdojKaeR9U9hlJWTBSeXV_oUWvt3paZny7u2wYnENI8", // ← Yeh line important hai (preserved)
   },
   openGraph: {
     title: "Trusted Maid & Domestic Help Services in Delhi | Select Maid",
