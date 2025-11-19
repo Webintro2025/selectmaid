@@ -1,49 +1,45 @@
 import ContactForm from "@/Components/ContactForm";
 import { locations } from "@/marketplace";
+import Slides from "@/Components/slides";
 
 export async function generateMetadata({ params }) {
 	const slug = params.slug;
 	// Convert slug to city name (reverse the slug logic)
-	const city = locations.find(
-		(loc) => loc.toLowerCase().replace(/\s+/g, '-') === slug
-	);
-	const cityName = city || "Location";
-	const url = `https://eazy-tax.in/in/${slug}`;
+	const rawCity = locations.find(
+  (loc) => loc.toLowerCase().replace(/\s+/g, '-') === slug
+);
+const cityName = rawCity
+  ? rawCity
+      .toLowerCase()
+      .split(/[\s-]+/)
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(' ')
+  : "Location";
+	const url = `https://selectmaid.in/in/${slug}`;
 	return {
-		title: `Company Registration Services in ${cityName} | Select Maid`,
-		description: `Need Company Registration Services in ${cityName} Call Select Maid, Expert In Private Limited Company Registration Services in ${cityName}, India.`,
+		title: `House Maid Live-in Services in ${cityName} | Select Maid`,
+		description: `If You Need House Maid Live-in Services in ${cityName}? Call Select Maid, Expert In Live-In Baby Care Services in ${cityName}, India.`,
 		keywords: [
-			`CA Services ${cityName}`,
-			`Chartered Accountant ${cityName}`,
-			`Company Registration Services in ${cityName}`,
-			`GST Consultant Services in ${cityName}`,
-			`Private Limited Company Registration Services in ${cityName}`,
-			`Partnership Firm Registration Services in ${cityName}`
+			`House Maid Live-in Services in ${cityName}`,
+      `Live-In Baby Care Services in ${cityName}`,
+      `Newborn Baby Care Maid Services in ${cityName}`,
+  `Live-In Patient Care Attendant Services in ${cityName}`,
+  `Premium Live-In Childcare Nanny Services in ${cityName}`,
+  `Elderly Care Taker Services in ${cityName}`,
+  `All-Rounder Maid & Cook Combo Services in ${cityName}`,
+  `Passport Holder Nanny Services in ${cityName}`,
+  `English-Speaking Nanny Services in ${cityName}`,
+  `Live-In Home Cook / 24×7 Home Chef Services in ${cityName}`,
+  `Professional Home Nurse Services in ${cityName}`,
+  `Bedside Patient Care Takers Services in ${cityName}`
+    
 		],
 		openGraph: {
-			title: `Company Registration Services in ${cityName} | Select Maid`,
-			description: `Find expert CA services in ${cityName}. Company registration, GST, bookkeeping, and more for businesses in ${cityName}.`,
+			title: `House Maid Live-in Services in ${cityName} | Select Maid`,
+			description: `If You Need House Maid Live-in Services in ${cityName}? Call Select Maid, Expert In Live-In Baby Care Services in ${cityName}, India.`,
 			url,
 			siteName: "Select Maid India",
-			images: [
-				{
-					url: "/banner1.jpg",
-					width: 1200,
-					height: 630,
-					alt: `Select Maid CA Services ${cityName}`
-				}
-			],
-			locale: "en_US",
-			type: "website"
-		},
-		twitter: {
-			card: "summary_large_image",
-			title: `${cityName} | Best CA Services in India | Select Maid`,
-			description: `Find expert CA services in ${cityName}. Company registration, GST, bookkeeping, and more for businesses in ${cityName}.`,
-			site: "@eazytaxdelhi",
-			images: [
-				"/banner1.jpg"
-			]
+			
 		},
 		alternates: {
 			canonical: url
@@ -57,356 +53,264 @@ export async function generateMetadata({ params }) {
 
 export default function LocationPage({ params }) {
 	const slug = params.slug;
-	const city = locations.find(
+	const rawLocation = locations.find(
 		(loc) => loc.toLowerCase().replace(/\s+/g, '-') === slug
 	);
-	if (!city) {
+	const locationName = rawLocation
+		? rawLocation
+				.toLowerCase()
+				.split(/[\s-]+/)
+				.map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+				.join(' ')
+		: null;
+	if (!locationName) {
 		return <main className="max-w-2xl mx-auto py-10 px-4"><h1 className="text-2xl font-bold">Location Not Found</h1></main>;
 	}
   return (
 
-    <div className="w-full">
-      <div className="flex flex-col md:flex-row w-full">
-        <div className="relative flex-1 bg-white px-4 sm:px-8 md:pl-24 py-8 md:py-10 overflow-hidden">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#195DF3] leading-tight w-full break-words">
-            Company Registration Services in {city}
-          </h1>
-          <p className="text-base sm:text-lg text-black mt-3 max-w-2xl">
-            At Select Maid, led by CA Avish Jain and under the next-generation leadership of CA Adishwar Jain and CA Nidhi Jain, we bring 30+ years of trusted expertise in delivering <strong>Company Registration Services in {city}</strong>. Our mission is to provide entrepreneurs, startups, and businesses with seamless compliance, clarity, and growth solutions in a constantly evolving financial landscape.
-            <br /><br />
-            We specialize in <strong>Company Registration Services in {city}</strong>, LLP Registration, Partnership Firm Registration, Sole Proprietorship Registration, MSME Registration, Startup India Registration, Society Registration, Trust Registration, Import Export Code Registration, GST Registration, GST Return Filing, and Bookkeeping Services. With decades of experience, we ensure that your business not only complies with legal requirements but also enjoys tax efficiency, smooth operations, and strategic growth opportunities.
-          </p>
-         
-          
-        </div>
-        <div
-          className="flex-1 px-4 sm:px-8 py-8 md:py-20 md:pr-11 flex flex-col items-center justify-center min-w-[300px]"
-          style={{ borderTopLeftRadius: "1.5rem", borderBottomLeftRadius: "1.5rem" }}
-        >
-          <ContactForm />
-        </div>
-      </div>
-    <div className="w-full h-0.5 bg-black my-4"></div>
-      <div className="bg-white text-gray-900 font-sans w-full">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4">
-          <div className="flex flex-col md:flex-row md:space-x-8 w-full">
-            {/* Left Sidebar */}
-            <aside className="w-full md:w-1/4 bg-blue-50 rounded-lg p-4 sm:p-6 mb-8 md:mb-0">
-              <h2 className="text-xl font-semibold text-blue-900 mb-4">
-                Related Services
-              </h2>
-              <ul className="list-disc list-inside space-y-2 text-blue-700 text-sm leading-tight">
-                <li>
-                  <a className="hover:underline" href="#">
-                    LLP Registration
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:underline" href="#">
-                    Partnership Firm Registration
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:underline" href="#">
-                    Sole Proprietorship Registration
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:underline" href="#">
-                    MSME Registration
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:underline" href="#">
-                    Startup India Registration
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:underline" href="#">
-                    Society Registration
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:underline" href="#">
-                    Import Export Code Registration (IEC)
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:underline" href="#">
-                    GST Registration & GST Return Filing
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:underline" href="#">
-                    Sole Proprietorship Registration Services
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:underline" href="#">
-                    Bookkeeping & Accounting Services
-                  </a>
-                </li>
-              </ul>
-            </aside>
+    <main className="w-full ">
+     
 
 
-            {/* Main Content */}
-            <main className="w-full md:w-3/4 mt-6 md:mt-0">
-              {/* Steps */}
-              <div className="flex flex-col sm:flex-row justify-between items-center text-center space-y-8 sm:space-y-0 sm:space-x-8 mb-10 w-full">
-                {/* Step 1 */}
-                <div className="flex flex-col items-center max-w-xs">
-                  <img alt="Icon showing a computer screen with a user profile and a checkmark" className="mb-2" height="48" src="https://storage.googleapis.com/a1aa/image/2bb12f25-3192-4808-23fd-9b23c4331a44.jpg" width="48" />
-                  <h3 className="font-semibold text-lg text-gray-900 mb-2">
-                    Step 1
-                  </h3>
-                  <p className="text-sm text-gray-700 max-w-[180px]">
-                    Fill the inquiry form, providing your contact details and particulars of your query.
-                  </p>
-                  <div className="h-0.5 w-full bg-black m-2"></div>
-                  <p>Visit Our Website for More Information : <a href="https://eazy-tax.in">Eazy-tax.in</a></p>
-                </div>
-                {/* Step 2 */}
-                <div className="flex flex-col items-center max-w-xs">
-                  <img alt="Icon showing a document with a plus sign" className="mb-2" height="48" src="https://storage.googleapis.com/a1aa/image/7e47cebc-8cb1-4af8-50da-ce6be506a733.jpg" width="48" />
-                  <h3 className="font-semibold text-lg text-gray-900 mb-2">
-                    Step 2
-                  </h3>
-                  <p className="text-sm text-gray-700 max-w-[180px]">
-                    An expert consultant will contact you to discuss your requirements and prepare necessary docs.
-                  </p>
-                    <div className="h-0.5 w-full bg-black m-2"></div>
-                  <p>Call Now : 9971669475</p>
-                </div>
-                {/* Step 3 */}
-                <div className="flex flex-col items-center max-w-xs">
-                  <img alt="Icon showing a certificate document with a seal" className="mb-2" height="48" src="https://storage.googleapis.com/a1aa/image/5e8faee7-9372-457a-26a1-bfbf8406b335.jpg" width="48" />
-                  <h3 className="font-semibold text-lg text-gray-900 mb-2">
-                    Step 3
-                  </h3>
-                  <p className="text-sm text-gray-700 max-w-[180px]">
-                    Once the documents are ready, we will proceed with delivering the required solution.
-                  </p>
-                    <div className="h-0.5 w-full bg-black m-2"></div>
-                  <p>Email: contact@eazy-tax.in</p>
-                </div>
-              </div>
 
-			  <div className="w-full h-1 bg-black "></div>
-              {/* Heading */}
-              <h2 className="text-2xl mt-3 font-semibold mb-4">Types of Companies/Businesses You Can Register in {city}</h2>
-          <p className="mb-4">
-            When you choose our <a href="https://www.justdial.com/Delhi/Company-Registration-Consultants/nct-10919031">Company Registration Services in {city}</a>, you can register different forms of businesses depending on your goals:
-          </p>
-      
-            </main>
-          </div>
-        </div>
-      </div>
+<div className="relative bg-gradient-to-r from-gray-800 via-red-900 to-gray-800 w-full
+  h-[120px] xs:h-[140px] sm:h-[200px] md:h-[260px] lg:h-[320px] xl:h-[360px]">
 
-  <div className="bg-white text-gray-900 font-sans px-4 sm:px-8 md:px-12 py-6 w-full">
-       
-       
-           <p className="mb-2">
-          <span className="font-bold">1. Private Limited Company Registration Services in {city}</span>
-        </p>
-        <p className="mb-4">
-          A Private Limited Company is the most preferred structure for businesses that aim to grow and attract investments. It is recognized as a separate legal entity, meaning the company has its own identity apart from its owners. This structure gives businesses greater credibility with investors, banks, and stakeholders. <strong>Private Limited Company Registration Services in {city}</strong> are particularly attractive for startups looking to raise venture capital or angel investment, as they provide a transparent and structured governance model. With perpetual succession, the company continues its existence even if ownership or directors change, making it highly reliable for businesses with long-term ambitions.
-           
-        </p>
-        <p className="mb-2">
-          <span className="font-bold">2. <a href="https://eazy-tax.in/services?name=Partnership%20Firm%20Registration" className="font-semibold ">Limited Liability Partnership Registration Services in {city} (LLP)</a></span>
-        </p>
-        <p className="mb-4">
-        
-            A <strong>Limited Liability Partnership Registration Services in {city}</strong> offers the flexibility of a partnership while protecting the personal assets of the partners. Unlike traditional partnerships, an LLP is considered a separate legal entity, which makes it easier to manage risks and liabilities. Many professionals, consultants, and service-based businesses in {city} prefer this structure because it combines low-cost compliance with the security of limited liability. LLPs are widely recognized for their simplicity and suitability for businesses that may not need large-scale funding but still want a professional and protected structure.
-        </p>
-        <p className="mb-2">
-          <span className="font-bold">3. Partnership Firm Registration Services in {city}</span>
-        </p>
-        <p>
-          
-            A <strong>Partnership Firm Registration Services in {city}</strong> is one of the oldest and simplest forms of business organizations in India. It is governed by a partnership agreement that defines the roles, responsibilities, and profit-sharing ratio among the partners. Although not considered a separate legal entity from its partners, it is still a popular choice for small and medium-sized businesses in {city} that rely on shared ownership and collective decision-making. Many family-run businesses and trading companies prefer this model due to its ease of formation and low cost of management.
-        </p>
-        <p className="mb-2">
-          <span className="font-bold">4. Sole Proprietorship Registration Services in {city}</span>
-        </p>
-        <p>
-        
-            A Sole Proprietorship is the simplest way to start a business, where a single individual owns, manages, and controls the entire enterprise. It is not legally separate from its owner, which means the business and the individual are considered one and the same for taxation and liability purposes. <strong>Sole Proprietorship Registration Services in {city}</strong>, Many small shop owners, traders, freelancers, and self-employed professionals in {city} begin with this structure because of its simplicity and minimal compliance requirements. However, while easy to start, it does not provide much scope for large-scale expansion or investment opportunities.
-        </p>
-        <p className="mb-2">
-          <span className="font-bold">5.One Person Company Registration Services in {city} (OPC)</span>
-        </p>
-        <p>
-   
-            A <strong>One Person Company Registration Services in {city}</strong> is an innovative structure introduced to encourage entrepreneurship among individuals. It allows a single person to enjoy the benefits of a corporate entity without needing multiple directors or shareholders. Unlike sole proprietorships, OPCs are recognized as separate legal entities, which provides the owner with limited liability protection. In {city}, OPCs have gained popularity among solo entrepreneurs who want to start small but plan to expand their businesses into Private Limited Companies in the future. This makes it an excellent stepping stone for growth-oriented individuals.
-        </p>
-        <p className="mb-2">
-          <span className="font-bold">6. Society Registration Services in {city}</span>
-        </p>
-        <p>
-          A Society is usually formed by a group of individuals who come together for non-profit purposes such as education, culture, art, or social welfare. Registered under the Societies Registration Act, it provides legal recognition to organizations that aim to serve society rather than earn profits. Many educational institutions, cultural associations, and charitable groups in {city} prefer <strong> Society Society Registration Services in {city}</strong> as it allows them to function transparently and receive grants or donations. It is an effective way to organize like-minded individuals around a common cause with proper legal standing.
-        </p>
-        <p className="mb-2">
-          <span className="font-bold">7.Trust Registration Services in {city}</span>
-        </p>
-        <p>
-          
-            A Trust is another form of non-profit organization, typically established for charitable, religious, or educational purposes. Trusts are governed by trustees, who are responsible for managing the property and assets of the trust in accordance with its objectives. In {city}, trusts are widely set up by philanthropists, social workers, and community leaders to work for the welfare of society. <strong>Trust Registration Services in {city}</strong>, not only ensures legal protection but also helps in securing credibility when seeking donations or financial support for social projects.
-        </p>
-      </div>
-
-  <div className="bg-white text-gray-900 font-sans px-4 sm:px-6 md:px-10 py-4 w-full">
-        
-  <div className="flex flex-col md:flex-row mt-10 shadow-lg rounded-2xl overflow-hidden w-full">
-        {/* Left Section: Criteria */}
-  <div className="flex-1 bg-white px-4 sm:px-8 md:px-16 py-8 md:py-20 overflow-hidden flex flex-col justify-center min-w-[280px]">
-          <h2 className="text-2xl font-bold text-blue-900 mb-6">Criteria for Company Registration in {city}</h2>
-          <ul className="list-disc list-inside text-base text-gray-800 mb-8 space-y-2">
-            <li>Minimum 2 directors and 2 shareholders (for Pvt Ltd Company)</li>
-            <li>At least one director must be an Indian resident</li>
-            <li>A registered office address in {city}</li>
-            <li>Authorized and paid-up share capital as per company structure</li>
-            <li>Digital Signature Certificate (DSC) and Director Identification Number (DIN) for directors</li>
-          </ul>
-        </div>
-        {/* Right Section: Benefits */}
-  <div className="flex-1 bg-[#c9e4ff] px-4 sm:px-8 md:px-16 py-5 md:py-10 flex flex-col justify-center items-center min-w-[280px]" style={{ borderTopLeftRadius: "1.5rem", borderBottomLeftRadius: "1.5rem" }}>
-          <h2 className="text-2xl font-bold text-blue-900 mb-6">Benefits of Private Limited Company Registration</h2>
-          <ul className="list-disc list-inside text-base text-gray-800 space-y-2">
-            <li>Limited Liability Protection – Personal assets of directors are protected</li>
-            <li>Better Funding Opportunities – Attract investors and venture capital</li>
-            <li>Separate Legal Entity – Company exists independent of its owners</li>
-            <li>Perpetual Succession – Business continues even after directors change</li>
-            <li>Tax Benefits – Optimized tax structures for higher savings</li>
-            <li>Enhanced Credibility – Builds trust with clients, banks, and stakeholders</li>
-          </ul>
-        </div>
+  <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-2 xs:px-4 sm:px-6 md:px-8 lg:px-10 xl:px-10">
+    <h1 className="text-white font-serif text-sm xs:text-base sm:text-xl md:text-2xl lg:text-2xl xl:text-5xl leading-tight drop-shadow-md">
+    House Maid Live-in Services in {locationName}
+    </h1>
+    <p className="text-white font-medium text-[10px] xs:text-xs sm:text-sm md:text-base mt-2 sm:mt-4 max-w-xs xs:max-w-md sm:max-w-2xl md:max-w-3xl lg:max-w-4xl drop-shadow">
+   Welcome to <a href="https://selectmaid.in/">Select Maid</a> , If You Are Looking For <strong>House Maid Live-in Services in {locationName}</strong> , We Are The Best Option For You. We Provide  Best  <strong>Live-In Baby Care Services in {locationName}, Newborn Baby Care Maid Services in  {locationName}</strong> , India.
+    </p>
+    
+  </div>
 </div>
+
+
+
+
+
+
+
+<div className="bg-white px-10">
+  <main className="w-full px-3 xs:px-4 sm:px-6 py-6 sm:py-8 md:py-10">
+    <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-center">
+      <section className="w-full md:w-1/2 text-black">
+        <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl leading-[1.2] font-semibold mb-3 sm:mb-4 md:mb-6 max-w-[600px]">
+          Best House Maid Live-in Services in {locationName} | Trusted Domestic Help for Every Home
+        </h2>
+        <p className="mb-4 sm:mb-6 max-w-[600px] text-xs xs:text-sm sm:text-base leading-relaxed font-normal">
+          Select Maid is a leading and trusted brand in <strong>House Maid Live-in Services in {locationName}</strong>, offering a comprehensive range of domestic care solutions for families across the country and abroad. With our head office located in Delhi and proudly registered under the Ministry of Corporate Affairs (MCA), Government of India, we are committed to delivering reliable, professional, and compassionate domestic services that enhance the comfort and convenience of modern households.
+
+We also provide transparent and secure job opportunities for domestic helpers, enabling thousands of workers to find dignified employment both in India and overseas. At <strong>House Maid Live-in Services in {locationName}</strong>, Our goal is to build a safe, trustworthy ecosystem for families and domestic workers alike.
+        </p>
+      </section>
+      <div className="w-full md:w-1/2 flex justify-center">
+        <img
+          alt={`House Maid Live-in Services in ${locationName}`}
+          className="object-cover rounded-lg w-full max-w-[350px] xs:max-w-[400px] sm:max-w-[450px] md:max-w-[500px] h-auto shadow"
+          height={500}
+          src="/Home.png"
+          width={500}
+        />
+      </div>
+    </div>
+  </main>
+</div>
+
+
+
+<hr />
+
+
+
+
+<div className="bg-white w-full px-16 xs:px-16 sm:px-16 py-6 sm:py-10 flex flex-col md:flex-row md:space-x-10 lg:space-x-20 ">
+  <div className="w-full md:w-1/2 flex flex-col justify-center">
+    <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl leading-[1.2] mb-3 sm:mb-6 font-semibold">
+  Why Select Maid Services Are Important for Every Household
+    
+    </h2>
+    <p className="text-xs xs:text-sm sm:text-base leading-relaxed max-w-xl">
+
+Select Maid services play a crucial role in helping families maintain a balanced, organized, and stress-free lifestyle. With today’s fast-paced routines, managing household chores, childcare, cooking, and patient care becomes overwhelming for many working professionals and traditional families. Select Maid bridges this gap by providing trained, reliable, and live-in domestic helpers who ensure your home runs smoothly around the clock. At <strong>Professional Home Nurse Services in {locationName}</strong> These services bring convenience, safety, expert support, and emotional comfort into your daily life. Whether it’s caring for newborns, assisting elderly parents, handling medical needs at home, or managing everyday household responsibilities, Select Maid offers dependable solutions tailored to your unique needs. This support not only improves your quality of life but also gives you more time to focus on work, family, and personal well-being.
+    </p>
+  </div>
+  <div className="w-full md:w-1/3 bg-gray-200 rounded-xl p-4 sm:p-6 md:p-8 mt-8 md:mt-0 flex flex-col justify-center shadow-sm">
+    <h2 className="text-base xs:text-lg sm:text-xl mb-4 sm:mb-6 text-center font-semibold">Get A Consultation</h2>
+   <ContactForm />
+  </div>
+</div>
+<hr />
+<div>
  
-	  <h2 className="text-4xl font-bold mt-6 text-center text-blue-900 mx-auto ">Clients Testimonials</h2>
-  <div className="w-full bg-gradient-to-r from-blue-50 to-blue-100 py-8 px-2 sm:px-4 md:px-8 mt-5">
+  <Slides/>
+</div>
+<hr />
 
-		
-  <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-6 md:gap-8 justify-center items-stretch w-full">
-        
-          <div className="flex-1 bg-white rounded-xl shadow p-6 flex flex-col items-center text-center border border-blue-100">
-            <div className="text-2xl mb-2">⭐</div>
-            <p className="italic text-gray-700 mb-2">"Select Maid made my company registration simple and hassle-free. Highly professional and reliable service."</p>
-            <div className="mt-2 text-blue-900 font-semibold">— Rohit Sharma</div>
-            <div className="text-xs text-gray-500">TechSpark Solutions Pvt. Ltd.</div>
-          </div>
-       
-          <div className="flex-1 bg-white rounded-xl shadow p-6 flex flex-col items-center text-center border border-blue-100">
-            <div className="text-2xl mb-2">⭐</div>
-            <p className="italic text-gray-700 mb-2">"Very supportive team! They guided us step by step in LLP registration. Smooth experience overall."</p>
-            <div className="mt-2 text-blue-900 font-semibold">— Priya Malhotra</div>
-            <div className="text-xs text-gray-500">GreenEdge Consulting LLP</div>
-          </div>
-         
-          <div className="flex-1 bg-white rounded-xl shadow p-6 flex flex-col items-center text-center border border-blue-100">
-            <div className="text-2xl mb-2">⭐</div>
-            <p className="italic text-gray-700 mb-2">"Quick, transparent, and trustworthy. I recommend them for all business compliance needs."</p>
-            <div className="mt-2 text-blue-900 font-semibold">— Amit Verma</div>
-            <div className="text-xs text-gray-500">Startup Founder</div>
-          </div>
-        </div>
-      </div>
 
-      </div>
 
-	  
-    
-      <div className="w-full bg-gradient-to-r from-blue-50 to-blue-100 py-10 px-2 sm:px-4 md:px-8 mt-10">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-8 w-full">
-        
-          <div className="flex-1 bg-white rounded-xl shadow p-4 sm:p-6 md:p-8 flex flex-col mb-6 md:mb-0 min-w-[280px]">
-            <h2 className="text-xl font-bold text-blue-900 mb-4">Required Documents for Company Registration</h2>
-            <p className="mb-3 text-gray-800">To proceed with registration, you need the following documents:</p>
-            <h3 className="font-semibold text-blue-800 mb-2 mt-4">For Directors & Shareholders:</h3>
-            <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
-              <li>PAN Card</li>
-              <li>Aadhaar Card / Passport / Driving License / Voter ID</li>
-              <li>Passport-size photographs</li>
-              <li>Latest Bank Statement / Utility Bill</li>
-            </ul>
-            <h3 className="font-semibold text-blue-800 mb-2 mt-4">For Registered Office:</h3>
-            <ul className="list-disc list-inside text-gray-700 space-y-1">
-              <li>Electricity Bill / Property Tax Receipt (not older than 2 months)</li>
-              <li>Rent Agreement (if rented premises)</li>
-              <li>No Objection Certificate (NOC) from landlord</li>
-            </ul>
-          </div>
-          {/* Right: Step-by-Step Process */}
-          <div className="flex-1 bg-white rounded-xl shadow p-4 sm:p-6 md:p-8 flex flex-col min-w-[280px]">
-            <h2 className="text-xl font-bold text-blue-900 mb-4">Step-by-Step Process of Company Registration in {city}</h2>
-            <p className="mb-3 text-gray-800">Our streamlined process ensures quick and hassle-free company registration:</p>
-            <ol className="list-decimal list-inside text-gray-700 space-y-2">
-              <li><span className="font-semibold">Consultation &amp; Planning</span> – Selecting the best business structure based on your needs.</li>
-              <li><span className="font-semibold">Obtaining DSC &amp; DIN</span> – Mandatory for all company directors.</li>
-              <li><span className="font-semibold">Company Name Approval</span> – Filing application with MCA for unique company name.</li>
-              <li><span className="font-semibold">Drafting MOA &amp; AOA</span> – Defining company objectives, rights, and rules.</li>
-              <li><span className="font-semibold">Filing Incorporation Documents</span> – Submission of SPICe+ form with MCA.</li>
-              <li><span className="font-semibold">Issuance of Certificate of Incorporation (COI)</span> – Official proof of company existence.</li>
-              <li><span className="font-semibold">PAN &amp; TAN Allotment</span> – For taxation and compliance.</li>
-              <li><span className="font-semibold">Bank Account Opening</span> – Registering corporate bank account.</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    
 
-    <div className="w-full flex flex-col lg:flex-row py-8 px-4 sm:px-8 md:px-16 gap-8">
-      <div className="flex-1">
-        <h2 className="text-2xl font-bold text-blue-900 mb-6">Frequently Asked Questions (FAQs) About Company Registration in {city}</h2>
-        <div className="space-y-6">
-          <div>
-            <p className="font-semibold text-blue-800">Q1. How long does it take to register a company in {city}?</p>
-            <p className="text-gray-800">It usually takes 7–10 working days, depending on documentation and MCA approvals.</p>
-          </div>
-          <div>
-            <p className="font-semibold text-blue-800">Q2. Can I register a company in {city} if I don’t own office space?</p>
-            <p className="text-gray-800">Yes, you can register with a rented property, provided you have a rent agreement and landlord’s NOC.</p>
-          </div>
-          <div>
-            <p className="font-semibold text-blue-800">Q3. What is the minimum capital required for Pvt Ltd registration?</p>
-            <p className="text-gray-800">There is currently no minimum paid-up capital requirement.</p>
-          </div>
-          <div>
-            <p className="font-semibold text-blue-800">Q4. Can foreigners be directors in an Indian company?</p>
-            <p className="text-gray-800">Yes, but at least one Indian resident director is mandatory.</p>
-          </div>
-          <div>
-            <p className="font-semibold text-blue-800">Q5. What’s the difference between LLP and Pvt Ltd Company?</p>
-            <div className="text-gray-800 mt-1">
-              <div><span className="font-semibold">LLP</span> – Flexible, low-cost, ideal for small firms and professionals.</div>
-              <div><span className="font-semibold">Pvt Ltd Company</span> – Best for scalable startups seeking investors and funding.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    <div className="flex-1 flex justify-center items-center mt-6 lg:mt-3.5">
-      <img src="/FAQ.jpg" alt={`Company Registration Services in ${city}`} className="rounded-3xl w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg" />
-    </div>
-    </div>
 
-	   
-  <section className="w-full pb-8 px-4 sm:px-8 md:px-12" aria-labelledby="conclusion-heading">
-      <div className="px-3">
-        <h2 id="conclusion-heading" className="text-2xl font-bold text-blue-900 mb-4">Conclusion – <span>Build Your Business Future with <strong>Select Maid</strong></span></h2>
-        <p className="text-gray-800 mb-4">
-          At <strong>Select Maid</strong>, we don’t just register your company—we guide you through the entire journey of business incorporation, compliance, and financial management. With a legacy of <strong>30+ years</strong>, we are a trusted partner for <strong>Company Registration Services in {city}</strong>.
-        </p>
-        <p className="text-gray-800 mb-4">
-          Whether you are a budding entrepreneur, a startup looking for investors, or an established business wanting structured compliance, our team of expert Chartered Accountants ensures your success with clarity, compliance, and confidence.
-        </p>
-        <p className="text-gray-800 font-semibold">
-          Take the first step today and let us simplify your <strong>Business Registration in {city}</strong>.
-        </p>
-      </div>
-    </section>
 
-	   </div>
+
+
+
+
+
+<div className="w-full mx-auto px-16 xs:px-16 sm:px-16 py-6 sm:py-8 md:py-10">
+  <h2 className="text-center mx-auto text-lg xs:text-xl sm:text-2xl md:text-3xl font-serif leading-[1.2] mb-4 sm:mb-6 text-black max-w-2xl sm:max-w-3xl md:max-w-4xl">
+  Our Premium Service Range Across {locationName}
+  </h2>
+<ul className="space-y-4 sm:space-y-6 text-xs xs:text-sm sm:text-base mt-2 sm:mt-3 leading-[1.6] list-none">
+    <li>
+      <span className="font-bold">1. Live-In House Maid Services in {locationName}</span><br />
+      Our flagship service provides full-time, live-in maids who manage the entire household with dedication and discipline. They efficiently handle daily chores such as cleaning, sweeping, mopping, dusting, laundry, utensil washing, and home organization. <strong>House Maid Live-in Services in {locationName}</strong>. Each maid is trained to maintain cleanliness, follow hygiene protocols, respect your privacy, and adjust easily to your home environment. Whether you have a small apartment or a large family home, our live-in maids ensure everything stays well-managed and stress-free.
+    </li>
+    <li>
+      <span className="font-bold">2. Professional Home Nurse Services in {locationName}</span><br />
+      We offer certified and highly competent live-in home nurses for patients requiring medical assistance within the comfort of their home. Our nurses are skilled in basic medical care, medication management, wound dressing, post-surgery care, vital monitoring, elder support, and mobility assistance. They work closely with the patient’s routine and medical requirements, ensuring constant supervision, comfort, and emotional support. Ideal for seniors, recovering patients, and individuals with long-term health conditions.
+    </li>
+    <li>
+      <span className="font-bold">3. Live-In Baby Care Services in {locationName}</span><br />
+      Our live-in babysitters and nannies provide full-time, loving, and safe childcare for infants and young children. Trained in feeding, bathing, diaper changing, hygiene care, bedtime routines, storytelling, and early learning activities, they ensure your child receives complete attention and nurturing care. With a focus on safety and emotional bonding, our nannies support both working parents and joint families with consistent and reliable childcare.
+    </li>
+    <li>
+      <span className="font-bold">4. Live-In Patient Care Attendant Services in {locationName}</span><br />
+      For elderly individuals, bedridden patients, or anyone recovering from illness or surgery, our patient care attendants offer complete bedside support. They assist with daily activities such as bathing, cleaning, mobility, feeding, medication reminders, repositioning, and maintaining hygiene. Their compassionate approach helps patients feel valued, comfortable, and emotionally supported throughout the day and night.
+    </li>
+    <li>
+      <span className="font-bold">5. Live-In Home Cook / 24×7 Home Chef Services in {locationName}</span><br />
+      We provide experienced live-in cooks and home chefs who prepare healthy, hygienic meals customized to your taste and dietary needs. Skilled in vegetarian and non-vegetarian Indian cuisine, as well as continental, Chinese, diet meals, kid-friendly food, and family meal planning, our cooks manage everything—from grocery planning to clean cooking spaces. Their expertise ensures your family enjoys fresh, delicious meals every day.
+    </li>
+    <li>
+      <span className="font-bold">6. Premium Live-In Childcare Nanny Services in {locationName}</span><br />
+      Our trained childcare nannies specialize in emotional bonding, early learning development, daily routines, meal preparation, safety monitoring, and discipline. They ensure your child’s growth, behavior, and well-being are nurtured in a positive and structured manner. This service is perfect for busy professionals, traveling parents, or families seeking long-term childcare support.
+    </li>
+    <li>
+      <span className="font-bold">7. Newborn Baby Care Maid Services in {locationName}</span><br />
+      We provide specialized newborn care maids who are expertly trained in baby massage, bathing, feeding support, night care, sanitization, burping, and handling delicate newborn routines. With a high focus on hygiene and soft-handed care, they ensure the mother receives full support during the postpartum period, while the newborn stays safe, healthy, and comfortable.
+    </li>
+    <li>
+      <span className="font-bold">8. Elderly Care Taker Services in {locationName}</span><br />
+      Our caretakers offer compassionate assistance to senior citizens who need help in their day-to-day activities. They support tasks like bathing, grooming, walking, feeding, medication reminders, companionship, and safety monitoring. Their patient-friendly approach ensures elderly individuals remain independent, secure, and emotionally supported in their own home.
+    </li>
+    <li>
+      <span className="font-bold">9. Bedside Patient Care Takers Services in {locationName}</span><br />
+      These professionals specialize in complete bedside care including mobility assistance, toileting support, meal help, cleaning, repositioning, and ensuring personal hygiene. Ideal for patients who require constant care but prefer staying at home rather than shifting to a care facility.
+    </li>
+    <li>
+      <span className="font-bold">10. All-Rounder Maid &amp; Cook Combo Services in {locationName}</span><br />
+      This unique service provides you with a multi-skilled live-in helper who can manage cooking, cleaning, baby care, elder support, and general household duties—all in one. It is the perfect solution for small families, working couples, or individuals looking for an efficient, cost-effective household management system with a single trusted helper.
+    </li>
+    <li>
+      <span className="font-bold">11. Passport Holder Nanny Services in {locationName}</span><br />
+      For families traveling abroad or those living overseas, we offer experienced nannies with valid passports who can accompany you internationally. Trained in global childcare standards, hygiene practices, and cultural adaptability, they ensure smooth support during travel and extended stays abroad.
+    </li>
+    <li>
+      <span className="font-bold">12. English-Speaking Nanny Services in {locationName}</span><br />
+      Our premium category English-speaking nannies are trained in communication, etiquette, child development, and advanced childcare techniques. They help children learn routines, discipline, language skills, manners, and creative activities. Ideal for high-profile families, NRIs, or parents who prefer an advanced level of childcare professionalism.
+    </li>
+  </ul>
+
+  <div className=" bg-gradient-to-r from-gray-800 via-red-900 to-gray-800  rounded-xl p-4 sm:p-6 mt-6 max-w-md sm:max-w-xl md:max-w-2xl mx-auto">
+    <h3 className="text-base xs:text-lg sm:text-xl font-semibold text-white mb-2 text-center">📞 Contact us today to discuss your requirements, request a quote, or place an order.</h3>
+  <p className="text-xs xs:text-sm sm:text-base text-white mb-2 text-center">If you are Looking for the <strong>Best House Maid Live-in Services in {locationName} </strong>? SelectMaid is your trusted partner.</p> <br/> 
+      <ul className="list-disc pl-4 sm:pl-6 text-xs xs:text-sm sm:text-base text-white mb-2">
+      <li>👉 <strong>Call Now:</strong> +91-7290007484</li>
+      <li>👉 <strong>Visit Our Website</strong> <a href="https://selectmaid.in/">www.selectmaid.in</a></li>
+      <li>👉 <strong>Our Email Address</strong> – selectmaid@gmail.com </li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+<div className="w-full mx-auto px-16 xs:px-16 sm:px-16 py-6 sm:py-8 md:py-10">
+  <h2 className="text-center mx-auto text-lg xs:text-xl sm:text-2xl md:text-3xl font-serif leading-[1.2] mb-4 sm:mb-6 text-black max-w-2xl sm:max-w-3xl md:max-w-4xl">
+  Why Choose Us – The Most Reliable House Maid Live-in Services in {locationName}
+  </h2>
+  <p className="space-y-4 sm:space-y-6 text-xs xs:text-sm sm:text-base mt-2 sm:mt-3 leading-[1.6]">
+  Choosing a trusted domestic helper is one of the most important decisions for any household. With Select Maid, you get a professional, secure, and stress-free experience that stands unmatched in the industry. Our <strong>House Maid Live-in Services in {locationName}</strong> are designed to provide families with comfort, safety, and consistent support—24 hours a day, 7 days a week.
+
+  </p>
+  <ul className="space-y-4 sm:space-y-6 text-xs xs:text-sm sm:text-base mt-2 sm:mt-3 leading-[1.6] list-none">
+    <li>
+      <span className="font-bold">1. Verified, Background-Checked &amp; Trusted Workforce</span><br />
+      At Select Maid, your family’s safety comes before anything else. That’s why every live-in maid, nanny, caregiver, and cook undergoes a strict verification process. This includes police verification, ID checks, previous employment references, and health screenings. Only trustworthy and proven candidates become part of our service. You never have to worry about safety, reliability, or background authenticity.
+    </li>
+    <li>
+      <span className="font-bold">2. Professionally Trained Domestic Helpers for Modern Homes</span><br />
+      We train our workers through structured modules that cover household cleaning, hygiene practices, kitchen management, child handling, elder support, patient care, discipline, and communication. This ensures that the helper you hire is polished, efficient, and fully prepared to handle the daily needs of a modern Indian home. Their training makes them fast, responsible, and capable of maintaining your home's cleanliness and routine.
+    </li>
+    <li>
+      <span className="font-bold">3. 24/7 Convenience with Full-Time Live-In Support</span><br />
+      Our <strong>House Maid Live-in Services in {locationName}</strong> offer complete peace of mind. A live-in helper ensures that there are no daily attendance issues, no delays, no excuses, and no last-minute emergencies. You get consistent support at all times—morning to night. Whether it’s cleaning, cooking, childcare, or elder support, your helper is available whenever you need them.
+    </li>
+    <li>
+      <span className="font-bold">4. Legally Registered &amp; Transparent Company</span><br />
+      Select Maid is fully registered under the Ministry of Corporate Affairs (MCA), Government of India, making us a legally recognized, structured, and compliant service provider. We follow all safety standards, legal documentation, fair employment policies, and transparent price structures. When you choose us, you choose professionalism, legality, and complete trust.
+    </li>
+    <li>
+      <span className="font-bold">5. PAN India Coverage With Seamless Placement Support</span><br />
+      Whether you live in Delhi NCR, Mumbai, Bangalore, Hyderabad, Chennai, Pune, Kolkata, Jaipur, Lucknow, Chandigarh, or any other city in India—we have a wide network of trained live-in maids available for placement. Our PAN India presence ensures that you get quick service, fast replacements, and consistent support no matter where you are located.
+    </li>
+    <li>
+      <span className="font-bold">6. Quick Replacement Guarantee Without Any Hassles</span><br />
+      If your domestic helper faces personal issues, struggles to adjust, or needs to be replaced for any reason, we arrange a quick and smooth replacement without any extra charges (as per policy). You will never be left without support. Our clients appreciate this because their home routine never gets disturbed.
+    </li>
+    <li>
+      <span className="font-bold">7. Personalized Matching for Your Family’s Exact Needs</span><br />
+      Every family has unique requirements, and we understand that deeply. We study your lifestyle, number of family members, food preferences, children’s needs, elder care requirements, cooking expectations, and daily schedule. Based on this, we match you with a maid or caregiver who fits your home perfectly. This personalized approach results in long-term satisfaction and better bonding.
+    </li>
+    <li>
+      <span className="font-bold">8. India’s Widest Domestic Service Range Under One Brand</span><br />
+      We offer every type of domestic service you may need, including House Maid Live-in Services, Home Nurse Services, Baby Care Live-in, Caretakers, Patient Attendants, Home Cooks, 24/7 Chefs, English-speaking nannies, newborn baby maids, elder care professionals, and all-rounder maids. You don’t have to look for different agencies—Select Maid covers everything under one trusted roof.
+    </li>
+    <li>
+      <span className="font-bold">9. Dedicated Relationship Manager for Every Client</span><br />
+      Every client receives a dedicated manager who listens to your requirements, helps you select the right worker, manages documentation, supports worker onboarding, and stays connected with you until you are fully satisfied. This personal support makes the entire process smooth, comfortable, and stress-free.
+    </li>
+    <li>
+      <span className="font-bold">10. Transparent Pricing With No Hidden Charges</span><br />
+      We offer clear and fair pricing for all our services. There are no hidden costs, no middlemen fees, and no surprise charges. The amount you agree to is exactly what you pay. Our honesty and transparency have made us one of the most trusted names in House Maid Live-in Services in India.
+    </li>
+    <li>
+      <span className="font-bold">11. Hassle-Free Documentation &amp; Smooth Onboarding</span><br />
+      We take care of everything—from worker ID documentation and contract agreements to onboarding support and rules explanation. You don’t have to handle any paperwork or legal formalities. We make the process simple, fast, and effortless for you.
+    </li>
+    <li>
+      <span className="font-bold">12. Professional Behaviour, Hygiene &amp; Discipline Guaranteed</span><br />
+      Our staff maintains high standards of cleanliness, grooming, discipline, and respectful behaviour. They understand boundaries, follow rules, respect family privacy, and work with complete dedication. Their professionalism ensures that your home remains peaceful and well-managed at all times.
+    </li>
+    <li>
+      <span className="font-bold">13. Perfect for Every Type of Family in India</span><br />
+      Whether you are a working couple, a joint family, a nuclear family, a home with elders, a home with infants, or a home with a patient—our live-in helpers can adapt to your lifestyle. They understand Indian culture, traditions, and family values, making them a perfect fit for any household.
+    </li>
+    <li>
+      <span className="font-bold">14. Thousands of Successful Placements Every Year</span><br />
+      With a massive network, years of experience, and thousands of satisfied clients, Select Maid has become the first choice for families seeking <strong>Live-In Patient Care Attendant Services in {locationName}</strong>. Our proven track record, positive reviews, and repeat clients show the quality of our placements.
+    </li>
+    <li>
+      <span className="font-bold">15. We Make Your Home Life Easy, Comfortable &amp; Stress-Free</span><br />
+      With Select Maid, your everyday life becomes smoother. You no longer have to worry about cleaning, cooking, managing kids, taking care of elders, or handling patient care. A trained helper ensures that your home runs perfectly—allowing you to focus on your work, family time, and personal peace.
+    </li>
+
+  </ul>
+</div>
+
+<hr />
+<div className="w-full mx-auto px-16 xs:px-16 sm:px-16 py-6 sm:py-8 md:py-10">
+  <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-serif mb-2 sm:mb-4">Conclusion:-</h2>
+  <p className="text-xs xs:text-sm sm:text-base font-sans text-black leading-relaxed">
+ 
+At Select Maid, we are committed to delivering trusted, trained, and reliable live-in domestic help across India. With a wide range of premium services from <strong>House Maid Live-in Services in {locationName}</strong> to childcare, patient care, elderly care, cooking, and home nursing we ensure every family receives personalized support and complete peace of mind. Our focus on quality, safety, and professionalism makes us a preferred choice for thousands of households. Whether you need daily home assistance or round-the-clock caregiving, we provide dependable solutions that improve your lifestyle and bring comfort, security, and convenience to your home.
+  </p>
+</div>
+
+    </main>
   );
 }
