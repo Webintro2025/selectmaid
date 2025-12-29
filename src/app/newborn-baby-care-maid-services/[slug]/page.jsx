@@ -3,7 +3,7 @@ import { locations } from "@/marketplace";
 import Slides from "@/Components/slides";
 
 export async function generateMetadata({ params }) {
-	const slug = await params.slug;
+	const {slug} = await params;
 	// Convert slug to city name (reverse the slug logic)
 	const rawCity = locations.find(
   (loc) => loc.toLowerCase().replace(/\s+/g, '-') === slug
